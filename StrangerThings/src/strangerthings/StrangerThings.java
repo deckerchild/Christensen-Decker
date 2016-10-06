@@ -5,6 +5,8 @@
  */
 package strangerthings;
 
+import byui.cit260.strangerthings.model.Player;
+
 /**
  *
  * @author mount
@@ -15,8 +17,13 @@ public class StrangerThings {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        //This is a change.
-        // TODO code application logic here
+        Player playerOne = new Player();
+        
+        playerOne.setName("Fred Flintstone");
+        
+        String playerInfo = playerOne.toString();
+        System.out.println(playerInfo);
+        
     }
     
 }
