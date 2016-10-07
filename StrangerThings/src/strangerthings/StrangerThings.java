@@ -8,6 +8,8 @@ package strangerthings;
 import byui.cit260.strangerthings.model.Player;
 import byui.cit260.strangerthings.model.Character;
 import byui.cit260.strangerthings.model.Scene;
+import byui.cit260.strangerthings.model.ResourceTyp;
+import byui.cit260.strangerthings.model.Monster;
 
 
 
@@ -43,6 +45,20 @@ public class StrangerThings {
         
         String playDebug = play.toString();
         System.out.println(playDebug);
+        
+        ResourceTyp type = new ResourceTyp();
+        type.setAmmountAvailable(5);
+        type.setResourceTyp("Sulfer");
+        
+        String typeDebug = type.toString();
+        System.out.println(typeDebug);
+        
+        Monster beast = new Monster();
+        beast.setName("Voldemort");
+        beast.setStrength(20);
+        
+        String beastDebug = beast.toString();
+        System.out.println(beastDebug);
         
         
         
