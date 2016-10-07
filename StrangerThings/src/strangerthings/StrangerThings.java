@@ -33,6 +33,26 @@ public class StrangerThings {
         String playerInfo = playerOne.toString();
         System.out.println(playerInfo);
         
+        Character character1 = new Character();
+        character1.setName("Mark Decker");
+        character1.setCorrdinates(50);
+        character1.setPower(12);
+        
+        String characterInfo = character1.toString();
+        System.out.println(characterInfo);
+        
+        Scene play = new Scene();
+        play.setDescription("This is a dark and lonely world.");
+        play.setBlockedMonster("The monster is blocked");
+        play.setDisplaySymbol("(-)");
+        
+        String playDebug = play.toString();
+        System.out.println(playDebug);
+        
+        
+        
+        
+        
     }
     
 }
