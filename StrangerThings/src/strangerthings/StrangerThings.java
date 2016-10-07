@@ -5,7 +5,12 @@
  */
 package strangerthings;
 
+import byui.cit260.strangerthings.model.Game;
+import byui.cit260.strangerthings.model.Inventory;
+import byui.cit260.strangerthings.model.Location;
+import byui.cit260.strangerthings.model.Map;
 import byui.cit260.strangerthings.model.Player;
+import byui.cit260.strangerthings.model.Weapon;
 
 /**
  *
@@ -18,7 +23,11 @@ public class StrangerThings {
      */
     public static void main(String[] args) {
         Player playerOne = new Player();
-        
+        Map map1 = new Map();
+        Weapon wep1 = new Weapon();
+        Inventory inven1 = new Inventory();
+        Game gameone = new Game();
+        Location loc1 = new Location();
         playerOne.setName("Fred Flintstone");
         
         String playerInfo = playerOne.toString();
