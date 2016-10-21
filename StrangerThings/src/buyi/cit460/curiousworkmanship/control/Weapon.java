@@ -11,4 +11,19 @@ package buyi.cit460.curiousworkmanship.control;
  */
 public class Weapon {
     
+    public double monsterEquation(double mass, double speed, double metersPerSec){
+        
+        double force;
+        double pounds;
+        double number = .2248;
+        
+            force = (mass * (metersPerSec/speed)); 
+            pounds = force * number;
+        if(pounds<=0 || pounds>=14)
+            return -1;
+        else
+            return pounds;
+                             
+        }
+    
 }
