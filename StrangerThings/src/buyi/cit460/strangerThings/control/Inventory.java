@@ -3,12 +3,12 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package buyi.cit460.curiousworkmanship.control;
+package buyi.cit460.strangerThings.control;
 
 /**
  *
  * @author tcfat
  */
-public class Map {
+public class Inventory {
     
 }
