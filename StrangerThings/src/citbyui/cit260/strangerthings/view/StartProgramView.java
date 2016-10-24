@@ -43,9 +43,15 @@ public class StartProgramView {
         + "\n*then he will send you home and your adventure *"
         + "\n*will be over! As you explore the map you will *"
         + "\n*search for the required items and build your  *"
-        + "\n*master weapon.                                *"
-        );
-"In this game, you will start your journey with a flashlight, a backpack, and a miniature shovel. You will move as a team to accomplish your goal of defeating the monster. Throughout the map there will be items placed that you can find to make your master weapon. The route you take and the weapon you make is up to you. "
+        + "\n*master weapon. In this game, you will start    *"
+        + "\n*your journey with a flashlight, a backpack,   *"
+        + "\n*and a miniature shovel. You will move as a    *"
+        + "\n*team to accomplish your goal of defeating the *"
+        + "\n*monster. Throughout the map there will be     *"
+        + "\n*items placed that you can find to make your   *"
+        + "\n*master weapon. The route you take and the     *"
+        + "\n*weapon you make is up to you.                 *"
+        + "\n************************************************"
         );
     }
     
