@@ -17,6 +17,7 @@ import byui.cit260.strangerthings.model.Monster;
 
 import byui.cit260.strangerthings.model.Weapon;
 import byui.cit260.strangerthings.model.Character;
+import citbyui.cit260.strangerthings.view.StartProgramView;
 
 /**
  *
@@ -29,71 +30,8 @@ public class StrangerThings {
      */
     public static void main(String[] args) {
         
-        Map map1 = new Map();
-        map1.setColumn("u5");
-        map1.setRow(5);
-        System.out.println(map1);
-        
-        Weapon wep1 = new Weapon();
-        wep1.setItemNumber(25);
-        wep1.setName("Billy Club");
-        System.out.println(wep1);
-        
-        Inventory inven1 = new Inventory();
-        inven1.setAmount(200);
-        inven1.setInventoryType("tool");
-        System.out.println(inven1);
-        
-        Game gameOne = new Game();
-        gameOne.setNumPlayers(3);
-        gameOne.setTotalTime(2.53);
-        System.out.println(gameOne);
-        
-        Location loc1 = new Location();
-        loc1.setColumn("u6");
-        loc1.setItems("Tommy Knocker");
-        loc1.setRow(5);
-        loc1.setVisited(true);
-        System.out.println(loc1);
-        
-        Player playerOne = new Player();
-        playerOne.setName("Fred Flintstone");
-        String playerInfo = playerOne.toString();
-        System.out.println(playerInfo);
-        
-        Character character1 = new Character();
-        character1.setName("Mark Decker");
-        character1.setCorrdinates(50);
-        character1.setPower(12);
-        
-        String characterInfo = character1.toString();
-        System.out.println(characterInfo);
-        
-        Scene play = new Scene();
-        play.setDescription("This is a dark and lonely world.");
-        play.setBlockedMonster("The monster is blocked");
-        play.setDisplaySymbol("(-)");
-        
-        String playDebug = play.toString();
-        System.out.println(playDebug);
-        
-        ResourceTyp type = new ResourceTyp();
-        type.setAmmountAvailable(5);
-        type.setResourceTyp("Sulfer");
-        
-        String typeDebug = type.toString();
-        System.out.println(typeDebug);
-        
-        Monster beast = new Monster();
-        beast.setName("Voldemort");
-        beast.setStrength(20);
-        
-        String beastDebug = beast.toString();
-        System.out.println(beastDebug);
-        
-        
-        
-        
+        StartProgramView startProgramView = new StartProgramView();
+        startProgramView.displayStartProgramView();
         
     }
     

@@ -5,6 +5,8 @@
  */
 package citbyui.cit260.strangerthings.view;
 
+import java.util.Scanner;
+
 /**
  *
  * @author mount
@@ -53,6 +55,56 @@ public class StartProgramView {
         + "\n*weapon you make is up to you.                 *"
         + "\n************************************************"
         );
+    }
+
+    public void displayStartProgramView() 
+    {
+        
+        boolean done = false;
+        do{
+            String playersName = this.getPlayersName();
+            if (playersName.toUpperCase().equals("Q"))
+                return;
+            
+            
+            done = this.doAction(playersName);
+        }while (!done);
+         /*
+        do
+            Prompt for and get the input value
+            if (value == “Q”) then
+            return
+
+            do requested action and display the next view
+        while the view is not done
+        */
+    }
+
+    private String getPlayersName() {
+        Scanner keyboard = new Scanner(System.in);
+        String value = "";
+        boolean valid = false;
+        
+        while (!valid){
+            System.out.println("\n" + this.promptMessage);
+            
+            value = keyboard.nextLine();
+            value = value.trim();
+            
+            if(value.length() < 1){
+                System.out.println("\nInvalid value: value can not be blank");
+                continue;
+            }
+            
+            break;
+                   
+        }
+        return value;
+    }
+
+    private boolean doAction(String playersName) {
+        System.out.println("\n*** doAction() called ***");
+        return true;
     }
     
     
