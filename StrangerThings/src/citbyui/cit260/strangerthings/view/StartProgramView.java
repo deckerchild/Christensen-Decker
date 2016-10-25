@@ -56,17 +56,20 @@ public class StartProgramView {
         + "\n************************************************"
         );
     }
-
+    /**
+     * displays the start program veiw
+     */
     public void displayStartProgramView() 
     {
         
-        boolean done = false;
+        boolean done = false;// set flag to not done
         do{
+            // prompt for and get players name
             String playersName = this.getPlayersName();
-            if (playersName.toUpperCase().equals("Q"))
-                return;
+            if (playersName.toUpperCase().equals("Q")) // User wants to quit
+                return; // exits game
             
-            
+            // do the requested action and dislay the next veiw
             done = this.doAction(playersName);
         }while (!done);
          /*
@@ -81,25 +84,25 @@ public class StartProgramView {
     }
 
     private String getPlayersName() {
-        Scanner keyboard = new Scanner(System.in);
-        String value = "";
-        boolean valid = false;
+        Scanner keyboard = new Scanner(System.in); // get the infile for keyboard
+        String value = ""; // value to be returned
+        boolean valid = false; // intialized to not valid
         
-        while (!valid){
+        while (!valid){ // loop while an invalide valur is entered
             System.out.println("\n" + this.promptMessage);
             
-            value = keyboard.nextLine();
-            value = value.trim();
+            value = keyboard.nextLine(); // get next line typed on the keyboard
+            value = value.trim(); // trim off leading and trailing blanks
             
-            if(value.length() < 1){
+            if(value.length() < 1){ // value is blank
                 System.out.println("\nInvalid value: value can not be blank");
                 continue;
             }
             
-            break;
+            break; // end loop
                    
         }
-        return value;
+        return value; // return the value entered
     }
 
     private boolean doAction(String playersName) {
