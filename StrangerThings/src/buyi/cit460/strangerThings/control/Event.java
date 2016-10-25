@@ -10,5 +10,15 @@ package buyi.cit460.strangerThings.control;
  * @author tcfat
  */
 public class Event {
-    
+    public int runCalculation(int startRun, int finalRun, int time){
+        int result = 0;
+        
+        int answer = ((startRun - finalRun)/time);
+        if(answer <=1 || answer >= .5)
+            result = 1;
+        else
+            result = 0;
+        
+        return result;
+    }
 }

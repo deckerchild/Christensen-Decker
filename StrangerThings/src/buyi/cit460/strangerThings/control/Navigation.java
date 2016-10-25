@@ -25,12 +25,14 @@ public class Navigation {
         return result;
                              
         }
+    
+    }
 
 
 //Else 
 //Result = 0
 //Return result
 
-}
+
     
 
