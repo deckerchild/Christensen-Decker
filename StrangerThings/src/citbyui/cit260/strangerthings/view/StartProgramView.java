@@ -5,6 +5,7 @@
  */
 package citbyui.cit260.strangerthings.view;
 
+import byui.cit260.strangerthings.model.Player;
 import java.util.Scanner;
 
 /**
@@ -72,15 +73,7 @@ public class StartProgramView {
             // do the requested action and dislay the next veiw
             done = this.doAction(playersName);
         }while (!done);
-         /*
-        do
-            Prompt for and get the input value
-            if (value == “Q”) then
-            return
-
-            do requested action and display the next view
-        while the view is not done
-        */
+         
     }
 
     private String getPlayersName() {
@@ -106,8 +99,33 @@ public class StartProgramView {
     }
 
     private boolean doAction(String playersName) {
-        System.out.println("\n*** doAction() called ***");
+        if(playersName.length() < 2){
+            System.out.println("\nInvalid players name: "
+            + "The name must be greatere than one character in length");
+        return false;
+        }
+        
+        Player player = GameControl.createPlayer(playersName);
+        
+        if(player == null){
+            System.out.println("\nError creating the player.");
+            return false;
+        }
+        this.displayNextView(player);
+        
         return true;
+    }
+
+    private void displayNextView(Player player) {
+        System.out.println("\n==================================================="
+                          +"\nWelcome to the game" + player.getName()
+                          +"\nWe hope you have a lot of fun!"
+                          +"\n==================================================="
+                          );
+        
+        MainMenuView mainMenuView = new MainMenuView();
+                
+        mainMenuView.displayMainMenuView();        
     }
     
     
