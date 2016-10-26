@@ -104,27 +104,33 @@ public class StartProgramView {
             + "The name must be greatere than one character in length");
         return false;
         }
-        
+        // call createPlayer() control function
         Player player = GameControl.createPlayer(playersName);
         
-        if(player == null){
+        if(player == null){ // if successful
             System.out.println("\nError creating the player.");
             return false;
         }
+        
+        // display next view
         this.displayNextView(player);
         
-        return true;
+        return true; // Success!
     }
 
     private void displayNextView(Player player) {
+        
+        // display a custom welcom meassage
         System.out.println("\n==================================================="
-                          +"\nWelcome to the game" + player.getName()
+                          +"\nWelcome to the game " + player.getName()
                           +"\nWe hope you have a lot of fun!"
                           +"\n==================================================="
                           );
         
+        // Create MainMenuView object
         MainMenuView mainMenuView = new MainMenuView();
-                
+        
+        // Display the main menu view        
         mainMenuView.displayMainMenuView();        
     }
     

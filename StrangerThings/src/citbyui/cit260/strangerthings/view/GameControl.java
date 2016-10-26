@@ -22,7 +22,7 @@ class GameControl {
         Player player = new Player();
         player.setName(name);
         
-        StrangerThings.setPlayer(player);
+        StrangerThings.setPlayer(player); //save the player
         
         return player;
    }
