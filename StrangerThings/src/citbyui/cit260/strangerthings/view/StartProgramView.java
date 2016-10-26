@@ -122,8 +122,8 @@ public class StartProgramView {
         
         // display a custom welcom meassage
         System.out.println("\n==================================================="
-                          +"\nWelcome to the game " + player.getName()
-                          +"\nWe hope you have a lot of fun!"
+                          +"\n Welcome to the game " + player.getName()
+                          +"\n We hope you have a lot of fun!"
                           +"\n==================================================="
                           );
         
