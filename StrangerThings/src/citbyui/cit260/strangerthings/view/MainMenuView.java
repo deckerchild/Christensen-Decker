@@ -6,6 +6,7 @@
 package citbyui.cit260.strangerthings.view;
 
 import java.util.Scanner;
+import strangerthings.StrangerThings;
 
 /**
  *
@@ -16,13 +17,13 @@ class MainMenuView {
 
     public void displayMainMenuView() {
            
-        boolean done = false;
+        boolean done = false; // set flag to not done
         do{
-            
+            // prompt for and get players name
             String menuOption = this.getMenuOption();
             if (menuOption.toUpperCase().equals("Q"))
-                return;
-            
+                return; // exit the game
+            // do the requested action and display the next veiw
             done = this.doAction(menuOption);
             
         }while (!done);
@@ -67,16 +68,16 @@ class MainMenuView {
         choice = choice.toUpperCase();
         
         switch(choice){
-            case "N":
+            case "N": // create and start a new game
                 this.startNewGame();
                 break;
-            case "R":  
+            case "R": // retore an existing saved game
                 this.startExistingGame();
                 break;
-            case "H":
+            case "H": // Displays a help menu
                 this.dispalyHelpMenu();
                 break;
-            case "S":   
+            case "S": // saves the game 
                 this.saveGame();
                 break;
             default:
@@ -88,7 +89,12 @@ class MainMenuView {
     }
 
     private void startNewGame() {
-        System.out.println("*** startNewGame function called ***");
+                 // Create a new game
+        GameControl.createNewGame(StrangerThings.getPlayer());
+    
+         // display the game menu
+         GameMenuView gameMenu = new GameMenuView();
+         gameMenu.displayMenu();
     }
 
     private void startExistingGame() {
