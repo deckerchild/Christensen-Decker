@@ -5,14 +5,102 @@
  */
 package citbyui.cit260.strangerthings.view;
 
+import java.util.Scanner;
+
 /**
  *
  * @author mount
  */
 class MainMenuView {
+    private String menu;
 
-    void displayMainMenuView() {
-        System.out.println("\n*** displayMenu() function called ***");
+    public void displayMainMenuView() {
+           
+        boolean done = false;
+        do{
+            
+            String menuOption = this.getMenuOption();
+            if (menuOption.toUpperCase().equals("Q"))
+                return;
+            
+            done = this.doAction(menuOption);
+            
+        }while (!done);
+    }
+
+    public MainMenuView() {
+        this.menu = "\n"
+                  + "\n------------------------------------------"
+                  +"\n Main Menu"
+                  +"\n-------------------------------------------"
+                  +"\n N - New Game"
+                  +"\n R - Restore Existing Game"
+                  +"\n H - Help menu"
+                  +"\n S - Save Game"
+                  +"\n E - Exit game"
+                  +"\n-------------------------------------------"; 
+    }
+
+    private String getMenuOption() {
+        Scanner keyboard = new Scanner(System.in); // get the infile for keyboard
+        String value = ""; // value to be returned
+        boolean valid = false; // intialized to not valid
+        
+        while (!valid){ // loop while an invalide valur is entered
+            System.out.println("\n" + this.menu);
+            
+            value = keyboard.nextLine(); // get next line typed on the keyboard
+            value = value.trim(); // trim off leading and trailing blanks
+            
+            if(value.length() < 1){ // value is blank
+                System.out.println("\nInvalid value: value can not be blank");
+                continue;
+            }
+            
+            break; // end loop
+                   
+        }
+        return value; // return the value entered
+    }
+
+    private boolean doAction(String choice) {
+        choice = choice.toUpperCase();
+        
+        switch(choice){
+            case "N":
+                this.startNewGame();
+                break;
+            case "R":  
+                this.startExistingGame();
+                break;
+            case "H":
+                this.dispalyHelpMenu();
+                break;
+            case "S":   
+                this.saveGame();
+                break;
+            default:
+                System.out.println("\n*** Invalid Selection *** Try Again");
+                break;
+                
+        }
+        return false;
+    }
+
+    private void startNewGame() {
+        System.out.println("*** startNewGame function called ***");
+    }
+
+    private void startExistingGame() {
+        System.out.println("*** startExistingGame function called ***");
+    }
+
+    private void dispalyHelpMenu() {
+        System.out.println("*** displayHelpMenu function called ***");
+    }
+
+    private void saveGame() {
+        System.out.println("*** saveGame function called ***");
     }
     
 }
