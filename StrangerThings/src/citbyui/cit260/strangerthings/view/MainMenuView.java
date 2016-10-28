@@ -22,7 +22,7 @@ class MainMenuView {
         do{
             // prompt for and get players name
             String menuOption = this.getMenuOption();
-            if (menuOption.toUpperCase().equals("Q"))
+            if (menuOption.toUpperCase().equals("E"))
                 return; // exit the game
             // do the requested action and display the next veiw
             done = this.doAction(menuOption);
@@ -104,7 +104,7 @@ class MainMenuView {
 
     private void dispalyHelpMenu() {
         HelpMenuView helpMenu = new HelpMenuView();
-        helpMenu.getHelpMenuOption();
+        helpMenu.displayHelpMenuView();
     }
 
     private void saveGame() {
