@@ -7,6 +7,7 @@ package citbyui.cit260.strangerthings.view;
 
 import java.util.Scanner;
 import strangerthings.StrangerThings;
+import citbyui.cit260.strangerthings.view.HelpMenuView;
 
 /**
  *
@@ -102,7 +103,8 @@ class MainMenuView {
     }
 
     private void dispalyHelpMenu() {
-        System.out.println("*** displayHelpMenu function called ***");
+        HelpMenuView helpMenu = new HelpMenuView();
+        helpMenu.getHelpMenuOption();
     }
 
     private void saveGame() {
