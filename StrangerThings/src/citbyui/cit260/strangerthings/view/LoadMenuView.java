@@ -6,49 +6,46 @@
 package citbyui.cit260.strangerthings.view;
 
 import java.util.Scanner;
-import strangerthings.StrangerThings;
-import citbyui.cit260.strangerthings.view.HelpMenuView;
 
 /**
  *
  * @author mount
  */
-class MainMenuView {
-    private String menu;
+class LoadMenuView {
+    private String loadMenu;
 
-    public void displayMainMenuView() {
-           
-        boolean done = false; // set flag to not done
+    void displayLoadMenu() {
+       boolean done = false; // set flag to not done
         do{
             // prompt for and get players name
-            String menuOption = this.getMenuOption();
-            if (menuOption.toUpperCase().equals("E"))
+            String menuOption = this.getLoadMenuOption();
+            if (menuOption.toUpperCase().equals("Q"))
                 return; // exit the game
             // do the requested action and display the next veiw
-            done = this.doAction(menuOption);
+            done = this.doAction1(menuOption);
             
         }while (!done);
     }
-
-    public MainMenuView() {
-        this.menu = "\n"
+    
+    void loadMenu()
+    {
+         this.loadMenu = "\n"
                   + "\n------------------------------------------"
-                  +"\n Main Menu"
+                  +"\n Load/Save Menu"
                   +"\n-------------------------------------------"
-                  +"\n N - New Game"
-                  +"\n R - Load/Save Game"
-                  +"\n H - Help menu"
-                  +"\n E - Exit game"
+                  +"\n L - Load Game"
+                  +"\n S - Save Game"
+                  +"\n Q - Quit"
                   +"\n-------------------------------------------"; 
     }
 
-    private String getMenuOption() {
+    public String getLoadMenuOption() {
         Scanner keyboard = new Scanner(System.in); // get the infile for keyboard
         String value = ""; // value to be returned
         boolean valid = false; // intialized to not valid
         
         while (!valid){ // loop while an invalide valur is entered
-            System.out.println("\n" + this.menu);
+            System.out.println("\n" + this.loadMenu);
             
             value = keyboard.nextLine(); // get next line typed on the keyboard
             value = value.trim(); // trim off leading and trailing blanks
@@ -64,18 +61,15 @@ class MainMenuView {
         return value; // return the value entered
     }
 
-    private boolean doAction(String choice) {
+    private boolean doAction1(String choice) {
         choice = choice.toUpperCase();
         
         switch(choice){
-            case "N": // create and start a new game
-                this.startNewGame();
+            case "L": // create and start a new game
+                this.loadGame();
                 break;
-            case "R": // brings up load/save menu
-                this.startExistingGame();
-                break;
-            case "H": // Displays a help menu
-                this.dispalyHelpMenu();
+            case "S": // retore an existing saved game
+                this.saveGame();
                 break;
             default:
                 System.out.println("\n*** Invalid Selection *** Try Again");
@@ -85,26 +79,15 @@ class MainMenuView {
         return false;
     }
 
-    private void startNewGame() {
-                 // Create a new game
-        GameControl.createNewGame(StrangerThings.getPlayer());
-    
-         // display the game menu
-         GameMenuView gameMenu = new GameMenuView();
-         gameMenu.displayGameMenu();
+    private void loadGame() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
-    private void startExistingGame() {
-        
-        LoadMenuView loadMenu = new LoadMenuView();
-        loadMenu.displayLoadMenu();
+    private void saveGame() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
-
-    private void dispalyHelpMenu() {
-        HelpMenuView helpMenu = new HelpMenuView();
-        helpMenu.displayHelpMenuView();
-    }
-
-    
-    
 }
+    
+    
+    
+
