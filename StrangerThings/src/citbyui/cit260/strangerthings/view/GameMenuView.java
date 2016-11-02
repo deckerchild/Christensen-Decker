@@ -12,7 +12,7 @@ import java.util.Scanner;
  * @author tcfat
  */
 public class GameMenuView {
-       private String gameMenu;
+        private String gameMenu;
     void displayGameMenu() {
            
         boolean done = false; // set flag to not done
@@ -29,7 +29,7 @@ public class GameMenuView {
     public GameMenuView() {
         this.gameMenu = "\n"
                   + "\n------------------------------------------"
-                  +"\n New Game Menu"
+                  +"\n In Game Menu"
                   +"\n-------------------------------------------"
                   +"\n M - Move"
                   +"\n I - Inventory"
@@ -69,27 +69,27 @@ public class GameMenuView {
         choice = choice.toUpperCase();
         
         switch(choice){
-            case "M": // create and start a new game
+            case "M": // Move the game along
                 this.moveInGame();
                 break;
-            case "I": // retore an existing saved game
+            case "I": // Checks the inventory
                 this.gameInventory();
                 break;
-            case "V": // Displays a help menu
+            case "V": // Shows the map
                 this.mapView();
                 break;
             case "S": // saves the game 
                 this.saveGame();
                 break;
-            case "H": // saves the game 
+            case "H": // Shows the help menu 
                 this.helpMenu();
                 break;
-            case "W": // saves the game 
+            case "W": // Allows you to create a weapon 
                 this.makeWeapon();
                 break;
-            case "L": // saves the game 
+            case "L": // Look for items on the location 
                 this.lookForItem();
-            case "T": // saves the game 
+            case "T": // Show the power of the weapon 
                 this.weaponStatus();
                 break;
             default:
@@ -102,7 +102,7 @@ public class GameMenuView {
 
     private void moveInGame() {
         InGameMoveMenu moveInGame = new InGameMoveMenu();
-        moveInGame.displayMoveMenuView();
+        moveInGame.displayMoveMenu();
     }
 
     private void gameInventory() {

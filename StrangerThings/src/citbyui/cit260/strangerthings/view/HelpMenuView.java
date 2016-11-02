@@ -122,8 +122,12 @@ public class HelpMenuView {
 
     private void printMoveHelp() {
         System.out.println("Characters will all be moving together one space "
-                         + "\nat a time. The arrow keys on the keyboard will "
-                         + "\nbe used to move the team/characters. ");
+                         + "\nat a time. You will us a grid pattern to move"
+                         + "\nyou will be asked to move a direction of N for"
+                         + "\nnorth, S for south E for east or W for west."
+                         + "\nYou will only be able to move one square at a"
+                         + "\ntime. Use the map to know the next location"
+                         + "\n you wish to move.");
     }
 
     private void printMapInventory() {
