@@ -6,6 +6,7 @@
 package citbyui.cit260.strangerthings.view;
 
 
+import byui.cit260.strangerThings.control.Event;
 import byui.cit260.strangerThings.control.Weapon;
 import java.util.Scanner;
 
@@ -67,10 +68,10 @@ class PlayerOption {
         choice = choice.toUpperCase();
         
         switch(choice){
-            case "A": // create and start a new game
+            case "A": // calls weapon class
                 this.attack();
                 break;
-            case "F": // retore an existing saved game
+            case "F": // calls event class
                 this.flee();
                 break;
             default:
@@ -87,7 +88,8 @@ class PlayerOption {
     }
 
     private void flee() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        Event eventA = new Event();
+        eventA.runCalculation(0, 10, 20);
     }
     
 }
