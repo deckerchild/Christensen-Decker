@@ -36,7 +36,7 @@ class PlayerOption {
                   +"\n Player Option Menu"
                   +"\n-------------------------------------------"
                   +"\n A - Attack the monster"
-                  +"\n F - Flea from the monster"
+                  +"\n F - Flee from the monster"
                   +"\n Q - Quit"
                   +"\n-------------------------------------------"; 
     }
@@ -83,7 +83,8 @@ class PlayerOption {
 
     private void attack() {
     Weapon weaponA = new Weapon();
-    weaponA.monsterEquation(15, 10, 5);            
+    double ansewer = weaponA.monsterEquation(15, 10, 5);
+    System.out.println(+ansewer);
     }
 
     private void flee() {
