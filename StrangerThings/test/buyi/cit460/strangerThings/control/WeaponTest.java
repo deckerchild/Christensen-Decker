@@ -5,7 +5,7 @@
  */
 package buyi.cit460.strangerThings.control;
 
-import buyi.cit460.strangerThings.control.Weapon;
+import byui.cit260.strangerThings.control.Weapon;
 import org.junit.After;
 import org.junit.AfterClass;
 import org.junit.Before;

@@ -5,7 +5,7 @@
  */
 package buyi.cit460.strangerThings.control;
 
-import buyi.cit460.strangerThings.control.Navigation;
+import byui.cit260.strangerThings.control.Navigation;
 import org.junit.Test;
 import static org.junit.Assert.*;
 

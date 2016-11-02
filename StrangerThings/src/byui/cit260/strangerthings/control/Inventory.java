@@ -3,14 +3,12 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package buyi.cit460.strangerThings.control;
-
-import byui.cit260.strangerthings.model.Player;
+package byui.cit260.strangerThings.control;
 
 /**
  *
  * @author tcfat
  */
-public class GameControl {
-  
+public class Inventory {
+    
 }

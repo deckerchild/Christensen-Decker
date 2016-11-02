@@ -36,10 +36,10 @@ public class GameMenuView {
                   +"\n V - View Map"
                   +"\n S - Save Game"
                   +"\n H - Help"
+                  +"\n P - Player options"
                   +"\n Q - Quit"
-                  +"\n W - Manufacture Weapon"
+                  +"\n W - Manufacture Weapon/Weapon Status"
                   +"\n L - Look for items"
-                  +"\n T - View weapon status"
                   +"\n-------------------------------------------"; 
     }
 
@@ -87,11 +87,11 @@ public class GameMenuView {
             case "W": // Allows you to create a weapon 
                 this.makeWeapon();
                 break;
+            case "P": // Allows you to create a weapon 
+                this.playerOption();
+                break;
             case "L": // Look for items on the location 
                 this.lookForItem();
-            case "T": // Show the power of the weapon 
-                this.weaponStatus();
-                break;
             default:
                 System.out.println("\n*** Invalid Selection *** Try Again");
                 break;
@@ -128,11 +128,10 @@ public class GameMenuView {
 
     private void lookForItem() {
         System.out.println("*** lookForItem function called ***");
-    }
+    }  
 
-    private void weaponStatus() {
-        System.out.println("*** weaponStatus function called ***");
+    private void playerOption() {
+        PlayerOption playerAction = new PlayerOption();
+        playerAction.doSomething();    
     }
-
-    
 }
