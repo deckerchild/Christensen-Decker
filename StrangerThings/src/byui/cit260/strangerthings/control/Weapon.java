@@ -19,7 +19,7 @@ public class Weapon {
         
             force = (mass * (metersPerSec/speed)); 
             pounds = force * number;
-        if(pounds<=0 || pounds>=14)
+        if(pounds<=0 || pounds>=60)
             return -1;
         else
             return pounds;
