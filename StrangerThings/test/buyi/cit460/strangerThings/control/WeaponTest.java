@@ -3,9 +3,9 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package buyi.cit460.strangerThings.control;
+package buyi.cit460.strangerthings.control;
 
-import byui.cit260.strangerThings.control.Weapon;
+import byui.cit260.strangerthings.control.Weapon;
 import org.junit.After;
 import org.junit.AfterClass;
 import org.junit.Before;

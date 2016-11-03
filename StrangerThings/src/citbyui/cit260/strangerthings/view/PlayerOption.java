@@ -6,8 +6,8 @@
 package citbyui.cit260.strangerthings.view;
 
 
-import byui.cit260.strangerThings.control.Event;
-import byui.cit260.strangerThings.control.Weapon;
+import byui.cit260.strangerthings.control.Event;
+import byui.cit260.strangerthings.control.Weapon;
 import java.util.Scanner;
 
 /**
@@ -83,14 +83,15 @@ class PlayerOption {
     }
 
     private void attack() {
-    Weapon weaponA = new Weapon();
-    double ansewer = weaponA.monsterEquation(15, 10, 5);
-    System.out.println(+ansewer);
+        Weapon weaponA = new Weapon();
+        double ansewer = weaponA.monsterEquation(15, 10, 5);
+        System.out.println(ansewer);
     }
 
     private void flee() {
         Event eventA = new Event();
-        eventA.runCalculation(0, 10, 20);
+        int ansewer = eventA.runCalculation(0, 10, 20);
+        System.out.println(ansewer);
     }
     
 }
