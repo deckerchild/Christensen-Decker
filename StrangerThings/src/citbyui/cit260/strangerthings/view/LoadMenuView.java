@@ -27,7 +27,7 @@ class LoadMenuView {
         }while (!done);
     }
     
-    void loadMenu()
+    public LoadMenuView()
     {
          this.loadMenu = "\n"
                   + "\n------------------------------------------"
@@ -80,11 +80,39 @@ class LoadMenuView {
     }
 
     private void loadGame() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
+        
+        Scanner keyboard = new Scanner(System.in); // get the infile for keyboard
+        String value = ""; // value to be returned
+        boolean valid = false;
+        while (!valid){
+            System.out.println("*** For debuging purposes, enter the following: C:\\Users\\mount\\OneDrive\\Fall 2016\\CIT 260");
+            value = keyboard.nextLine(); // get next line typed on the keyboard
+            value = value.trim(); // trim off leading and trailing blanks
+            if(value.length() >= 1)
+            {
+                System.out.println("Loaded Successfully");
+                valid = true;
+            }
+            }
+        }
+        
+        
+    
 
     private void saveGame() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        Scanner keyboard = new Scanner(System.in); // get the infile for keyboard
+        String value = ""; // value to be returned
+        boolean valid = false;
+        while (!valid){
+            System.out.println("*** For debuging purposes, enter the following: C:\\Users\\mount\\OneDrive\\Fall 2016\\CIT 260");
+            value = keyboard.nextLine(); // get next line typed on the keyboard
+            value = value.trim(); // trim off leading and trailing blanks
+            if(value.length() >= 1)
+            {
+                System.out.println("Saved Successfully");
+                valid = true;
+            }
+            }
     }
 }
     

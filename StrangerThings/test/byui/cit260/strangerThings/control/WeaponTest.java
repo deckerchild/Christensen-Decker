@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package buyi.cit460.strangerthings.control;
+package byui.cit260.strangerThings.control;
 
 import byui.cit260.strangerthings.control.Weapon;
 import org.junit.After;
