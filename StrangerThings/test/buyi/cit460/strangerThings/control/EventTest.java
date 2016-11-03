@@ -5,7 +5,7 @@
  */
 package buyi.cit460.strangerThings.control;
 
-import byui.cit260.strangerThings.control.Event;
+import byui.cit260.strangerthings.control.Event;
 import org.junit.Test;
 import static org.junit.Assert.*;
 

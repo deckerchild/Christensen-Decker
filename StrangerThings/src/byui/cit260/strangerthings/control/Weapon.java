@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package byui.cit260.strangerThings.control;
+package byui.cit260.strangerthings.control;
 
 /**
  *
@@ -25,9 +25,9 @@ public class Weapon {
             return pounds;
                       
         }
-    public Weapon(){
-         System.out.println("weapon test");
-    }
+//   public Weapon(){
+//         System.out.println("weapon test");
+ //   }
 }
     
 
