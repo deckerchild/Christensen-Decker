@@ -13,61 +13,27 @@ import citbyui.cit260.strangerthings.view.HelpMenuView;
  *
  * @author mount
  */
-class MainMenuView {
-    private String menu;
-
-    public void displayMainMenuView() {
+public class MainMenuView extends View{
            
-        boolean done = false; // set flag to not done
-        do{
-            // prompt for and get players name
-            String menuOption = this.getMenuOption();
-            if (menuOption.toUpperCase().equals("E"))
-                return; // exit the game
-            // do the requested action and display the next veiw
-            done = this.doAction(menuOption);
-            
-        }while (!done);
-    }
+    
 
     public MainMenuView() {
-        this.menu = "\n"
-                  + "\n------------------------------------------"
+             super("\n"
+                  +"\n-------------------------------------------"
                   +"\n Main Menu"
                   +"\n-------------------------------------------"
                   +"\n N - New Game"
                   +"\n R - Load/Save Game"
                   +"\n H - Help menu"
-                  +"\n E - Exit game"
-                  +"\n-------------------------------------------"; 
+                  +"\n Q - Exit game"
+                  +"\n-------------------------------------------"); 
     }
 
-    private String getMenuOption() {
-        Scanner keyboard = new Scanner(System.in); // get the infile for keyboard
-        String value = ""; // value to be returned
-        boolean valid = false; // intialized to not valid
+    @Override
+    public boolean doAction(String value) {
+        value = value.toUpperCase();
         
-        while (!valid){ // loop while an invalide valur is entered
-            System.out.println("\n" + this.menu);
-            
-            value = keyboard.nextLine(); // get next line typed on the keyboard
-            value = value.trim(); // trim off leading and trailing blanks
-            
-            if(value.length() < 1){ // value is blank
-                System.out.println("\nInvalid value: value can not be blank");
-                continue;
-            }
-            
-            break; // end loop
-                   
-        }
-        return value; // return the value entered
-    }
-
-    private boolean doAction(String choice) {
-        choice = choice.toUpperCase();
-        
-        switch(choice){
+        switch(value){
             case "N": // create and start a new game
                 this.startNewGame();
                 break;
