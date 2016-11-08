@@ -11,23 +11,10 @@ import java.util.Scanner;
  *
  * @author tcfat
  */
-public class GameMenuView {
-        private String gameMenu;
-    void displayGameMenu() {
-           
-        boolean done = false; // set flag to not done
-        do{
-            // prompt for and get players name
-            String menuOption = this.getMenuOption();
-            if (menuOption.toUpperCase().equals("Q"))
-                return; // exit the game
-            // do the requested action and display the next veiw
-            done = this.doAction(menuOption);
-            
-        }while (!done);
-    }
+public class GameMenuView extends View{
+    
     public GameMenuView() {
-        this.gameMenu = "\n"
+             super("\n"
                   + "\n------------------------------------------"
                   +"\n In Game Menu"
                   +"\n-------------------------------------------"
@@ -40,32 +27,11 @@ public class GameMenuView {
                   +"\n Q - Quit"
                   +"\n W - Manufacture Weapon/Weapon Status"
                   +"\n L - Look for items"
-                  +"\n-------------------------------------------"; 
+                  +"\n-------------------------------------------"); 
     }
 
-    private String getMenuOption() {
-        Scanner keyboard = new Scanner(System.in); // get the infile for keyboard
-        String value = ""; // value to be returned
-        boolean valid = false; // intialized to not valid
-        
-        while (!valid){ // loop while an invalide valur is entered
-            System.out.println("\n" + this.gameMenu);
-            
-            value = keyboard.nextLine(); // get next line typed on the keyboard
-            value = value.trim(); // trim off leading and trailing blanks
-            
-            if(value.length() < 1){ // value is blank
-                System.out.println("\nInvalid value: value can not be blank");
-                continue;
-            }
-            
-            break; // end loop
-                   
-        }
-        return value; // return the value entered
-    }
-
-    private boolean doAction(String choice) {
+    @Override
+    public boolean doAction(String choice) {
         choice = choice.toUpperCase();
         
         switch(choice){
@@ -102,7 +68,7 @@ public class GameMenuView {
 
     private void moveInGame() {
         InGameMoveMenu moveInGame = new InGameMoveMenu();
-        moveInGame.displayMoveMenu();
+        moveInGame.display();
     }
 
     private void gameInventory() {
@@ -119,7 +85,7 @@ public class GameMenuView {
 
     private void helpMenu() {
      HelpMenuView helpMenu = new HelpMenuView();
-        helpMenu.displayHelpMenuView();   
+        helpMenu.display();   
     }
 
     private void makeWeapon() {
@@ -132,6 +98,6 @@ public class GameMenuView {
 
     private void playerOption() {
         PlayerOption playerAction = new PlayerOption();
-        playerAction.doSomething();    
+        playerAction.display();    
     }
 }

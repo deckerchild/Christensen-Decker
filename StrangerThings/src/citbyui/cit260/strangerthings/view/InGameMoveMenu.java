@@ -11,23 +11,10 @@ import java.util.Scanner;
  *
  * @author tcfat
  */
-public class InGameMoveMenu {
-        private String moveMenu;
-    void displayMoveMenu() {
-           
-        boolean done = false; // set flag to not done
-        do{
-            // prompt for and get players name
-            String menuOption = this.getMenuOption();
-            if (menuOption.toUpperCase().equals("Q"))
-                return; // exit the game
-            // do the requested action and display the next veiw
-            done = this.doAction(menuOption);
-            
-        }while (!done);
-    }
+public class InGameMoveMenu extends View{
+     
     public InGameMoveMenu() {
-        this.moveMenu = "\n"
+              super("\n"
                   + "\n------------------------------------------"
                   +"\n Move Menu"
                   +"\n-------------------------------------------"
@@ -36,32 +23,11 @@ public class InGameMoveMenu {
                   +"\n E - To move East"
                   +"\n W - To move West"
                   +"\n Q - To go back to game menu"
-                  +"\n-------------------------------------------"; 
+                  +"\n-------------------------------------------"); 
     }
 
-    private String getMenuOption() {
-        Scanner keyboard = new Scanner(System.in); // get the infile for keyboard
-        String value = ""; // value to be returned
-        boolean valid = false; // intialized to not valid
-        
-        while (!valid){ // loop while an invalide valur is entered
-            System.out.println("\n" + this.moveMenu);
-            
-            value = keyboard.nextLine(); // get next line typed on the keyboard
-            value = value.trim(); // trim off leading and trailing blanks
-            
-            if(value.length() < 1){ // value is blank
-                System.out.println("\nInvalid value: value can not be blank");
-                continue;
-            }
-            
-            break; // end loop
-                   
-        }
-        return value; // return the value entered
-    }
-
-    private boolean doAction(String choice) {
+    @Override
+    public boolean doAction(String choice) {
         choice = choice.toUpperCase();
         
         switch(choice){

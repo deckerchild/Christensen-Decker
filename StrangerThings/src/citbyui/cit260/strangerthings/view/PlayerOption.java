@@ -14,57 +14,22 @@ import java.util.Scanner;
  *
  * @author tcfat
  */
-class PlayerOption {
-    private String optionMenu;
-
-    void doSomething() {
-       boolean done = false; // set flag to not done
-        do{
-            // prompt for and get players name
-            String menuOption = this.getLoadMenuOption();
-            if (menuOption.toUpperCase().equals("Q"))
-                return; // exit the game
-            // do the requested action and display the next veiw
-            done = this.doAction1(menuOption);
-            
-        }while (!done);
-    }
+public class PlayerOption extends View{
     
     public PlayerOption()
     {
-         this.optionMenu = "\n"
+              super("\n"
                   + "\n------------------------------------------"
                   +"\n Player Option Menu"
                   +"\n-------------------------------------------"
                   +"\n A - Attack the monster"
                   +"\n F - Flee from the monster"
                   +"\n Q - Quit"
-                  +"\n-------------------------------------------"; 
+                  +"\n-------------------------------------------"); 
     }
 
-    public String getLoadMenuOption() {
-        Scanner keyboard = new Scanner(System.in); // get the infile for keyboard
-        String value = ""; // value to be returned
-        boolean valid = false; // intialized to not valid
-        
-        while (!valid){ // loop while an invalide valur is entered
-            System.out.println("\n" + this.optionMenu);
-            
-            value = keyboard.nextLine(); // get next line typed on the keyboard
-            value = value.trim(); // trim off leading and trailing blanks
-            
-            if(value.length() < 1){ // value is blank
-                System.out.println("\nInvalid value: value can not be blank");
-                continue;
-            }
-            
-            break; // end loop
-                   
-        }
-        return value; // return the value entered
-    }
-
-    private boolean doAction1(String choice) {
+    @Override
+    public boolean doAction(String choice) {
         choice = choice.toUpperCase();
         
         switch(choice){

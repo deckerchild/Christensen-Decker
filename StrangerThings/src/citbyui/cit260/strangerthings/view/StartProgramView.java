@@ -46,7 +46,7 @@ public class StartProgramView {
         + "\n*then he will send you home and your adventure *"
         + "\n*will be over! As you explore the map you will *"
         + "\n*search for the required items and build your  *"
-        + "\n*master weapon. In this game, you will start    *"
+        + "\n*master weapon. In this game, you will start   *"
         + "\n*your journey with a flashlight, a backpack,   *"
         + "\n*and a miniature shovel. You will move as a    *"
         + "\n*team to accomplish your goal of defeating the *"

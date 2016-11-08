@@ -12,25 +12,10 @@ import strangerthings.StrangerThings;
  *
  * @author tcfat
  */
-public class HelpMenuView {
-    private String helpMenu;
-
-    public void displayHelpMenuView() {
-           
-        boolean done = false; // set flag to not done
-        do{
-            // prompt for and get players name
-            String menuOption = this.getHelpMenuOption();
-            if (menuOption.toUpperCase().equals("Q"))
-                return; // exit the game
-            // do the requested action and display the next veiw
-            done = this.doAction1(menuOption);
-            
-        }while (!done);
-    }
+public class HelpMenuView extends View {    
 
     public HelpMenuView() {
-        this.helpMenu = "\n"
+            super( "\n"
                   + "\n------------------------------------------"
                   +"\n Help Menu"
                   +"\n-------------------------------------------"
@@ -40,32 +25,11 @@ public class HelpMenuView {
                   +"\n L - List of Inventory on map"
                   +"\n B - how to manufacture upgraded weapons"
                   +"\n Q - Quit"
-                  +"\n-------------------------------------------"; 
+                  +"\n-------------------------------------------"); 
     }
 
-    public String getHelpMenuOption() {
-        Scanner keyboard = new Scanner(System.in); // get the infile for keyboard
-        String value = ""; // value to be returned
-        boolean valid = false; // intialized to not valid
-        
-        while (!valid){ // loop while an invalide valur is entered
-            System.out.println("\n" + this.helpMenu);
-            
-            value = keyboard.nextLine(); // get next line typed on the keyboard
-            value = value.trim(); // trim off leading and trailing blanks
-            
-            if(value.length() < 1){ // value is blank
-                System.out.println("\nInvalid value: value can not be blank");
-                continue;
-            }
-            
-            break; // end loop
-                   
-        }
-        return value; // return the value entered
-    }
-
-    private boolean doAction1(String choice) {
+    @Override
+    public boolean doAction(String choice) {
         choice = choice.toUpperCase();
         
         switch(choice){
