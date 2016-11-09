@@ -12,17 +12,17 @@ import java.util.Scanner;
  *
  * @author mount
  */
-public class StartProgramView {
+public class StartProgramView extends View{
     
-    private String promptMessage;
+    private String displayMessage;
 
     public StartProgramView() {
-        this.promptMessage = "\nPlease enter your name: ";
+        super("\nPlease enter your name: ");
         //display the banner when the view is created
         this.displayBanner();
     }
 
-    private void displayBanner() {
+    public void displayBanner() {
         System.out.println(
           "\n************************************************"
         + "\n*                                              *"
@@ -60,45 +60,10 @@ public class StartProgramView {
     /**
      * displays the start program veiw
      */
-    public void displayStartProgramView() 
-    {
-        
-        boolean done = false;// set flag to not done
-        do{
-            // prompt for and get players name
-            String playersName = this.getPlayersName();
-            if (playersName.toUpperCase().equals("Q")) // User wants to quit
-                return; // exits game
-            
-            // do the requested action and dislay the next veiw
-            done = this.doAction(playersName);
-        }while (!done);
-         
-    }
 
-    private String getPlayersName() {
-        Scanner keyboard = new Scanner(System.in); // get the infile for keyboard
-        String value = ""; // value to be returned
-        boolean valid = false; // intialized to not valid
-        
-        while (!valid){ // loop while an invalide valur is entered
-            System.out.println("\n" + this.promptMessage);
-            
-            value = keyboard.nextLine(); // get next line typed on the keyboard
-            value = value.trim(); // trim off leading and trailing blanks
-            
-            if(value.length() < 1){ // value is blank
-                System.out.println("\nInvalid value: value can not be blank");
-                continue;
-            }
-            
-            break; // end loop
-                   
-        }
-        return value; // return the value entered
-    }
 
-    private boolean doAction(String playersName) {
+    @Override
+    public boolean doAction(String playersName) {
         if(playersName.length() < 2){
             System.out.println("\nInvalid players name: "
             + "The name must be greatere than one character in length");
