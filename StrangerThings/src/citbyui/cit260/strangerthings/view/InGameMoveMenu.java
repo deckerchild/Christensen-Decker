@@ -5,8 +5,6 @@
  */
 package citbyui.cit260.strangerthings.view;
 
-import java.util.Scanner;
-
 /**
  *
  * @author tcfat

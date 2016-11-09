@@ -5,9 +5,7 @@
  */
 package citbyui.cit260.strangerthings.view;
 
-import java.util.Scanner;
 import strangerthings.StrangerThings;
-import citbyui.cit260.strangerthings.view.HelpMenuView;
 
 /**
  *

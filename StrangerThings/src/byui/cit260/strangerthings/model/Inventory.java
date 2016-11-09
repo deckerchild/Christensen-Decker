@@ -15,6 +15,13 @@ import java.util.Objects;
 public class Inventory implements Serializable{
     private String inventoryType;
     private int amount;
+    
+    private int nails = 0;
+    private int barbedWire = 0;
+    private int glassShards = 0;
+    private int thorns = 0;
+    private int rocks = 0;
+    private int sharpMetal = 0;
 
     public Inventory() {
     }
@@ -69,5 +76,51 @@ public class Inventory implements Serializable{
     public void setAmount(int amount) {
         this.amount = amount;
     }
-    
+    public int getNails() {
+        return nails;
+    }
+
+    public void setNails(int nails) {
+        this.nails = nails;
+    }
+
+    public int getBarbedWire() {
+        return barbedWire;
+    }
+
+    public void setBarbedWire(int barbedWire) {
+        this.barbedWire = barbedWire;
+    }
+
+    public int getGlassShards() {
+        return glassShards;
+    }
+
+    public void setGlassShards(int glassShards) {
+        this.glassShards = glassShards;
+    }
+
+    public int getThorns() {
+        return thorns;
+    }
+
+    public void setThorns(int thorns) {
+        this.thorns = thorns;
+    }
+
+    public int getRocks() {
+        return rocks;
+    }
+
+    public void setRocks(int rocks) {
+        this.rocks = rocks;
+    }
+
+    public int getSharpMetal() {
+        return sharpMetal;
+    }
+
+    public void setSharpMetal(int sharpMetal) {
+        this.sharpMetal = sharpMetal;
+    }
 }

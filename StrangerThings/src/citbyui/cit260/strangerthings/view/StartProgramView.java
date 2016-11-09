@@ -6,7 +6,6 @@
 package citbyui.cit260.strangerthings.view;
 
 import byui.cit260.strangerthings.model.Player;
-import java.util.Scanner;
 
 /**
  *

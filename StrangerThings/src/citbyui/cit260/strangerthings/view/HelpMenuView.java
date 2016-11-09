@@ -5,9 +5,6 @@
  */
 package citbyui.cit260.strangerthings.view;
 
-import java.util.Scanner;
-import strangerthings.StrangerThings;
-
 /**
  *
  * @author tcfat
@@ -47,9 +44,6 @@ public class HelpMenuView extends View {
                 break;
             case "B": // saves the game 
                 this.printManufacture();
-                break;
-            case "Q": // saves the game 
-                this.quit();
                 break;
             default:
                 System.out.println("\n*** Invalid Selection *** Try Again");
@@ -109,11 +103,7 @@ public class HelpMenuView extends View {
                          + "\nand monster. The more objects you have, the more "
                          + "\npowerful your weapon becomes.");
     }
-
-    private void quit() {
-       // GameMenuView gameMenu = new GameMenuView();
-         //gameMenu.displayMenu();
-    }
+    
 
     
 }

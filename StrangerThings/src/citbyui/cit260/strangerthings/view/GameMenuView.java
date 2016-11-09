@@ -5,7 +5,7 @@
  */
 package citbyui.cit260.strangerthings.view;
 
-import java.util.Scanner;
+import byui.cit260.strangerthings.model.Inventory;
 
 /**
  *
@@ -72,7 +72,8 @@ public class GameMenuView extends View{
     }
 
     private void gameInventory() {
-        System.out.println("*** GameInventory Called function called ***");
+        GameInventory gInventory = new GameInventory();
+        gInventory.display();
     }
 
     private void mapView() {
