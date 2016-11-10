@@ -12,8 +12,8 @@ package citbyui.cit260.strangerthings.view;
 public class HelpMenuView extends View {    
 
     public HelpMenuView() {
-            super( "\n"
-                  + "\n------------------------------------------"
+             super("\n"
+                  +"\n-------------------------------------------"
                   +"\n Help Menu"
                   +"\n-------------------------------------------"
                   +"\n G - Goal of Game"
