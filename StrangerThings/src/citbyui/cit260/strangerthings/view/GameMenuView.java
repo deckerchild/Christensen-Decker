@@ -90,7 +90,8 @@ public class GameMenuView extends View{
     }
 
     private void makeWeapon() {
-        System.out.println("*** makeWeapon function called ***");
+        MakeWeapon mWeapon = new MakeWeapon();
+        mWeapon.display();
     }
 
     private void lookForItem() {
