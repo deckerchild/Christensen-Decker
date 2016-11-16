@@ -20,8 +20,6 @@ public enum Character implements Serializable {
     private final int corrdinates;
     private final int power;
 
-     public Character() {
-    }
     Character(int power){
         this.power = power; 
     }
