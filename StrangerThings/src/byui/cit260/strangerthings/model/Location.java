@@ -17,6 +17,24 @@ public class Location implements Serializable{
     private String items;
     private int row;
     private String column;
+    private Inventory inventory;
+    private Scene scene;
+
+    public Scene getScene() {
+        return scene;
+    }
+
+    public void setScene(Scene scene) {
+        this.scene = scene;
+    }
+
+    public Inventory getInventory() {
+        return inventory;
+    }
+
+    public void setInventory(Inventory inventory) {
+        this.inventory = inventory;
+    }
 
     public Location() {
     }

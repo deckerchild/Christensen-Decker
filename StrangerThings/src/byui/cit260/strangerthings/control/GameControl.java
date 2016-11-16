@@ -12,5 +12,9 @@ import byui.cit260.strangerthings.model.Player;
  * @author tcfat
  */
 public class GameControl {
-  
+  public static void createNewGame(Player player){
+      
+      Game game = new Game();
+      
+  }
 }

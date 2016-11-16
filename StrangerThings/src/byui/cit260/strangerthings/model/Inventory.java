@@ -22,6 +22,24 @@ public class Inventory implements Serializable{
     private int thorns = 0;
     private int rocks = 0;
     private int sharpMetal = 0;
+    private Game game;
+
+    public Game getGame() {
+        return game;
+    }
+
+    public void setGame(Game game) {
+        this.game = game;
+    }
+
+    public Weapon getWeapon() {
+        return weapon;
+    }
+
+    public void setWeapon(Weapon weapon) {
+        this.weapon = weapon;
+    }
+    private Weapon weapon;
 
     public Inventory() {
     }
