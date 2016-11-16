@@ -5,7 +5,9 @@
  */
 package byui.cit260.strangerThings.control;
 
+import byui.cit260.strangerthings.model.Game;
 import byui.cit260.strangerthings.model.Player;
+import strangerthings.StrangerThings;
 
 /**
  *
@@ -15,6 +17,12 @@ public class GameControl {
   public static void createNewGame(Player player){
       
       Game game = new Game();
+      StrangerThings.setCurrentGame(game);
+       
+      game.setPlayer(player);
+      
+      InventoryItem[] inventoryList = GameControl.createInventoryList();
+      game.setInventory(inventoryList);
       
   }
 }
