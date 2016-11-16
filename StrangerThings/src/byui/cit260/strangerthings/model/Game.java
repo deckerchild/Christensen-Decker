@@ -6,6 +6,7 @@
 package byui.cit260.strangerthings.model;
 
 import java.io.Serializable;
+import java.util.ArrayList;
 
 /**
  *
@@ -14,8 +15,45 @@ import java.io.Serializable;
 public class Game implements Serializable{
     private double totalTime;
     private int numPlayers;
+    private Weapon weapon;
+    private Map map;
+    private Player player;
+
+    public Player getPlayer() {
+        return player;
+    }
+
+    public void setPlayer(Player player) {
+        this.player = player;
+    }
+    ArrayList<Inventory> inventoryList = new ArrayList<Inventory>();
+    
+    public Map getMap() {
+        return map;
+    }
+
+    public void setMap(Map map) {
+        this.map = map;
+    }
+    
 
     public Game() {
+    }
+
+    public ArrayList<Inventory> getInventoryList() {
+        return inventoryList;
+    }
+
+    public void setInventoryList(ArrayList<Inventory> inventoryList) {
+        this.inventoryList = inventoryList;
+    }
+
+    public Weapon getWeapon() {
+        return weapon;
+    }
+
+    public void setWeapon(Weapon weapon) {
+        this.weapon = weapon;
     }
 
     @Override
@@ -67,6 +105,10 @@ public class Game implements Serializable{
 
     public void setNumPlayers(int numPlayers) {
         this.numPlayers = numPlayers;
+    }
+
+    public void setMap(byui.cit260.strangerThings.control.Map map) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
     
 }

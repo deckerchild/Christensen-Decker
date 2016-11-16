@@ -4,6 +4,7 @@
  * and open the template in the editor.
  */
 package byui.cit260.strangerthings.model;
+import java.awt.Point;
 import java.io.Serializable;
 import java.util.Objects;
 /**
@@ -12,36 +13,45 @@ import java.util.Objects;
  */
 public enum Character implements Serializable {
     
-    Mike,
-    Lucas,
-    Dustin,
-    Eleven;
+    Mike("This is Mike"),
+    Lucas("This is Lucas"),
+    Dustin("This is Dustin"),
+    Eleven("This is Eleven");
     
-    private final int corrdinates;
-    private final int power;
+    private final Point corrdinates;
+    private final String description;
+    private Game game;
+    private Location location;
 
-    Character(int power){
-        this.power = power; 
+    public Game getGame() {
+        return game;
     }
-    
 
-    public int getCorrdinates() {
+    public void setGame(Game game) {
+        this.game = game;
+    }
+
+    public Location getLocation() {
+        return location;
+    }
+
+    public void setLocation(Location location) {
+        this.location = location;
+    }
+
+    Character(String description) {
+        this.description = description;
+        corrdinates = new Point(1,1);
+        
+        
+    }
+
+    public Point getCorrdinates() {
         return corrdinates;
     }
 
-
-    public int getPower() {
-        return power;
+    public String getDescription() {
+        return description;
     }
 
-
-
-    @Override
-    public String toString() {
-        return "Character{" + "name=" + name + ", corrdinates=" + corrdinates + ", power=" + power + '}';
-    }
-    
-    
-    
-    
 }
