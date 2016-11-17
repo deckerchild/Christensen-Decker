@@ -5,7 +5,7 @@
  */
 package byui.cit260.strangerThings.control;
 
-import byui.cit260.strangerthings.control.Weapon;
+import byui.cit260.strangerthings.control.WeaponControl;
 import org.junit.After;
 import org.junit.AfterClass;
 import org.junit.Before;
@@ -39,7 +39,7 @@ public class WeaponTest {
     }
 
     /**
-     * Test of monsterEquation method, of class Weapon.
+     * Test of monsterEquation method, of class WeaponControl.
      */
     @Test
     public void testMonsterEquation() {
@@ -47,7 +47,7 @@ public class WeaponTest {
         double mass = 12.0;
         double vel = 0.25;
         double speed = 1.0;
-        Weapon instance = new Weapon();
+        WeaponControl instance = new WeaponControl();
         double expResult = 10.7904;
         double result = instance.monsterEquation(mass, vel, speed);
         assertEquals(expResult, result, 0.0);
@@ -56,7 +56,7 @@ public class WeaponTest {
         mass = -1;
         vel = 9;
         speed = 12;
-        instance = new Weapon();
+        instance = new WeaponControl();
         expResult = -1;
         result = instance.monsterEquation(mass, vel, speed);
         assertEquals(expResult, result, 0.0);
@@ -65,7 +65,7 @@ public class WeaponTest {
         mass = 24;
         vel = 1;
         speed = -1;
-        instance = new Weapon();
+        instance = new WeaponControl();
         expResult = -1;
         result = instance.monsterEquation(mass, vel, speed);
         assertEquals(expResult, result, 0.0);
@@ -74,7 +74,7 @@ public class WeaponTest {
         mass = 24;
         vel = 37;
         speed = -1;
-        instance = new Weapon();
+        instance = new WeaponControl();
         expResult = -1;
         result = instance.monsterEquation(mass, vel, speed);
         assertEquals(expResult, result,0.0);
@@ -83,7 +83,7 @@ public class WeaponTest {
         mass = 1;
         vel = 1;
         speed = 1;
-        instance = new Weapon();
+        instance = new WeaponControl();
         expResult = 0.2248;
         result = instance.monsterEquation(mass, vel, speed);
         assertEquals(expResult, result, 0.0);
@@ -92,7 +92,7 @@ public class WeaponTest {
         mass = 12;
         vel = 12;
         speed = 12;
-        instance = new Weapon();
+        instance = new WeaponControl();
         expResult = 2.6976;
         result = instance.monsterEquation(mass, vel, speed);
         assertEquals(expResult, result, 0.0);

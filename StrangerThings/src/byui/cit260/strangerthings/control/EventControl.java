@@ -9,7 +9,7 @@ package byui.cit260.strangerthings.control;
  *
  * @author tcfat
  */
-public class Event {
+public class EventControl {
     public int runCalculation(int startRun, int finalRun, int time){
         int result = 0;
         

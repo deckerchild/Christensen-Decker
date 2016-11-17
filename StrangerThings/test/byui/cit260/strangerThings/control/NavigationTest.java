@@ -5,7 +5,7 @@
  */
 package byui.cit260.strangerThings.control;
 
-import byui.cit260.strangerThings.control.Navigation;
+import byui.cit260.strangerThings.control.NavigationControl;
 import org.junit.Test;
 import static org.junit.Assert.*;
 
@@ -19,7 +19,7 @@ public class NavigationTest {
     }
 
     /**
-     * Test of shackCalculation method, of class Navigation.
+     * Test of shackCalculation method, of class NavigationControl.
      */
     @Test
     public void testShackCalculation() {
@@ -27,7 +27,7 @@ public class NavigationTest {
         int x = 12;
         int i = 24;
         int answer = 8;
-        Navigation instance = new Navigation();
+        NavigationControl instance = new NavigationControl();
         int expResult = 1;
         int result = instance.shackCalculation(x, i, answer);
         assertEquals(expResult, result);
@@ -36,7 +36,7 @@ public class NavigationTest {
         x = 12;
         i = -1;
         answer = 3;
-        instance = new Navigation();
+        instance = new NavigationControl();
         expResult = -1;
         result = instance.shackCalculation(x, i, answer);
         assertEquals(expResult, result);
@@ -45,7 +45,7 @@ public class NavigationTest {
         x = -1;
         i = 24;
         answer = 3;
-        instance = new Navigation();
+        instance = new NavigationControl();
         expResult = -1;
         result = instance.shackCalculation(x, i, answer);
         assertEquals(expResult, result);
@@ -54,7 +54,7 @@ public class NavigationTest {
         x = 0;
         i = 0;
         answer = 0;
-        instance = new Navigation();
+        instance = new NavigationControl();
         expResult = -1;
         result = instance.shackCalculation(x, i, answer);
         assertEquals(expResult, result);

@@ -9,7 +9,7 @@ package byui.cit260.strangerthings.control;
  *
  * @author tcfat
  */
-public class Weapon {
+public class WeaponControl {
     
     public double monsterEquation(double mass, double speed, double metersPerSec){
         
@@ -25,7 +25,7 @@ public class Weapon {
             return pounds;
                       
         }
-//   public Weapon(){
+//   public WeaponControl(){
 //         System.out.println("weapon test");
  //   }
 }

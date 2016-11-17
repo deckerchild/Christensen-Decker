@@ -5,7 +5,7 @@
  */
 package byui.cit260.strangerThings.control;
 
-import byui.cit260.strangerthings.control.Event;
+import byui.cit260.strangerthings.control.EventControl;
 import org.junit.Test;
 import static org.junit.Assert.*;
 
@@ -19,7 +19,7 @@ public class EventTest {
     }
 
     /**
-     * Test of runCalculation method, of class Event.
+     * Test of runCalculation method, of class EventControl.
      */
     @Test
     public void testRunCalculation() {
@@ -27,7 +27,7 @@ public class EventTest {
         int startRun = 1;
         int finalRun = 12;
         int time = 12;
-        Event instance = new Event();
+        EventControl instance = new EventControl();
         int expResult = 1;
         int result = instance.runCalculation(startRun, finalRun, time);
         assertEquals(expResult, result);
@@ -38,7 +38,7 @@ public class EventTest {
         startRun = 2;
         finalRun = 24;
         time = 2;
-        instance = new Event();
+        instance = new EventControl();
         expResult = 1;
         result = instance.runCalculation(startRun, finalRun, time);
         assertEquals(expResult, result);
@@ -47,7 +47,7 @@ public class EventTest {
         startRun = 24;
         finalRun = 2;
         time = 1;
-        instance = new Event();
+        instance = new EventControl();
         expResult = 1;
         result = instance.runCalculation(startRun, finalRun, time);
         assertEquals(expResult, result);

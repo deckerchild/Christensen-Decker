@@ -12,7 +12,7 @@ import java.util.Objects;
  *
  * @author tcfat
  */
-public class Navigation {
+public class NavigationControl {
     
     public int shackCalculation(int x, int i, int answer){
         int result;

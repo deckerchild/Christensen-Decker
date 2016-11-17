@@ -6,8 +6,8 @@
 package citbyui.cit260.strangerthings.view;
 
 
-import byui.cit260.strangerthings.control.Event;
-import byui.cit260.strangerthings.control.Weapon;
+import byui.cit260.strangerthings.control.EventControl;
+import byui.cit260.strangerthings.control.WeaponControl;
 import java.util.Scanner;
 
 /**
@@ -81,7 +81,7 @@ public class PlayerOption extends View{
                    
         }
         
-        Weapon weaponA = new Weapon();
+        WeaponControl weaponA = new WeaponControl();
         double ansewer = weaponA.monsterEquation(mass, speed, hard);
  
         if(ansewer > 60){
@@ -99,7 +99,7 @@ public class PlayerOption extends View{
         }
 
     private void flee() {
-        Event eventA = new Event();
+        EventControl eventA = new EventControl();
         int ansewer = eventA.runCalculation(0, 10, 20);
         System.out.println(ansewer);
     }

@@ -6,7 +6,10 @@
 package byui.cit260.strangerThings.control;
 
 import byui.cit260.strangerthings.model.Game;
+import byui.cit260.strangerthings.model.Inventory;
 import byui.cit260.strangerthings.model.Player;
+import byui.cit260.strangerthings.model.Weapon;
+import java.util.ArrayList;
 import strangerthings.StrangerThings;
 
 /**
@@ -21,8 +24,27 @@ public class GameControl {
        
       game.setPlayer(player);
       
-      InventoryItem[] inventoryList = GameControl.createInventoryList();
-      game.setInventory(inventoryList);
+      ArrayList<Inventory> inventoryList = new ArrayList<Inventory>();
+      game.setInventoryList(inventoryList);
+      
+      Weapon weapon = new Weapon();
+      game.setWeapon(Weapon);
       
   }
+  public static Player createPlayer(String name){
+        if(name == null){
+            return null;
+        }
+    
+        Player player = new Player();
+        player.setName(name);
+        
+        StrangerThings.setPlayer(player); //save the player
+        
+        return player;
+   }
+
+    private static Inventory[] createInventoryList() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
 }
