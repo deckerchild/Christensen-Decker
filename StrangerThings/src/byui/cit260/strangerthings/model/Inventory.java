@@ -141,4 +141,16 @@ public class Inventory implements Serializable{
     public void setSharpMetal(int sharpMetal) {
         this.sharpMetal = sharpMetal;
     }
+
+    public void setDescription(String nails) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    public void setQuantityInStock(int i) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    public void setRequiredAmount(int i) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
 }

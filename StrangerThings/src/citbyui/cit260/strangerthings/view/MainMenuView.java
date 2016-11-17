@@ -5,6 +5,7 @@
  */
 package citbyui.cit260.strangerthings.view;
 
+import byui.cit260.strangerThings.control.GameControl;
 import strangerthings.StrangerThings;
 
 /**

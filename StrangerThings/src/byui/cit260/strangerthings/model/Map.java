@@ -15,6 +15,11 @@ import java.util.Objects;
 public class Map implements Serializable{
     private int row;
     private String column;
+    private Location[][] locations;
+
+    public Map(int i, int i0) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
 
     public int getRow() {
         return row;

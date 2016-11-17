@@ -107,7 +107,7 @@ public class Game implements Serializable{
         this.numPlayers = numPlayers;
     }
 
-    public void setMap(byui.cit260.strangerThings.control.Map map) {
+public void setMap(byui.cit260.strangerthings.control.MapControl map) {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
     

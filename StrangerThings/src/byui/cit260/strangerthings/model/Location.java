@@ -6,6 +6,7 @@
 package byui.cit260.strangerthings.model;
 
 import java.io.Serializable;
+import java.util.ArrayList;
 import java.util.Objects;
 
 /**
@@ -19,6 +20,7 @@ public class Location implements Serializable{
     private String column;
     private Inventory inventory;
     private Scene scene;
+    private ArrayList<Character> characters;
 
     public Scene getScene() {
         return scene;

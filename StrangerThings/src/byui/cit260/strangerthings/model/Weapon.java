@@ -15,8 +15,10 @@ import java.util.Objects;
 public class Weapon implements Serializable{
     private String name;
     private int itemNumber;
+    private String description;
 
     public Weapon() {
+        this.description = "\nThis weapon will be used to slay the monster.";
     }
 
     @Override
