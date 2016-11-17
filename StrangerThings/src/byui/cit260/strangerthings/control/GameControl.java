@@ -30,6 +30,14 @@ public class GameControl {
       Weapon weapon = new Weapon();
       game.setWeapon(Weapon);
       
+      Weapon weapon = new Weapon();
+      game.setWeapon(weapon);
+      
+      Map map = MapControl.createMap();
+      game.setMap(map);
+      
+      MapControl.moveCharacterToStartingLocation(map);
+      
   }
   public static Player createPlayer(String name){
         if(name == null){
