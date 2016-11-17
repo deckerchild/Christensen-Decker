@@ -11,7 +11,7 @@ import byui.cit260.strangerthings.model.Location;
 import byui.cit260.strangerthings.model.Map;
 import byui.cit260.strangerthings.model.Player;
 import byui.cit260.strangerthings.model.Scene;
-import byui.cit260.strangerthings.model.ResourceTyp;
+import byui.cit260.strangerthings.model.ResourceType;
 import byui.cit260.strangerthings.model.Monster;
 
 

@@ -12,11 +12,11 @@ import java.util.Objects;
  *
  * @author mount
  */
-public class ResourceTyp implements Serializable {
+public class ResourceType implements Serializable {
     private int ammountAvailable;
     private String ResourceTyp;
 
-    public ResourceTyp() {
+    public ResourceType() {
     }
     
     
@@ -56,7 +56,7 @@ public class ResourceTyp implements Serializable {
         if (getClass() != obj.getClass()) {
             return false;
         }
-        final ResourceTyp other = (ResourceTyp) obj;
+        final ResourceType other = (ResourceType) obj;
         if (this.ammountAvailable != other.ammountAvailable) {
             return false;
         }

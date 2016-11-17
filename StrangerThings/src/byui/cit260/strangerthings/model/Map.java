@@ -14,11 +14,33 @@ import java.util.Objects;
  */
 public class Map implements Serializable{
     private int row;
-    private String column;
+    private int column;
     private Location[][] locations;
+    private int noOfRows;
+    private int noOfColumns;
 
-    public Map(int i, int i0) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    public Map(int noOfRows, int noOfColumns) {
+        if (noOfRows < 1 || noOfColumns < 1){
+            System.out.println("The number of rows and columns must be > zero");
+            return;
+        }
+        
+        this.noOfRows = noOfRows;
+        this. noOfColumns = noOfColumns;
+        
+        this.locations = new Location[noOfRows][noOfColumns];
+        
+        for (int row = 0; row < noOfRows; row++){
+            for(int column = 0; column < noOfColumns; column++){
+                
+                Location location = new Location();
+                location.setColumn(column);
+                location.setRow(row);
+                location.setVisited(true);
+                
+                locations[row][column] = location;
+            }
+        }
     }
 
     public int getRow() {
@@ -66,12 +88,16 @@ public class Map implements Serializable{
         this.row = row;
     }
 
-    public String getColumn() {
+    public int getColumn() {
         return column;
     }
 
-    public void setColumn(String column) {
+    public void setColumn(int column) {
         this.column = column;
+    }
+
+    public Location[][] getLocations() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
     
 }

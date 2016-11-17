@@ -17,7 +17,7 @@ public class Location implements Serializable{
     private boolean visited;
     private String items;
     private int row;
-    private String column;
+    private int column;
     private Inventory inventory;
     private Scene scene;
     private ArrayList<Character> characters;
@@ -108,11 +108,11 @@ public class Location implements Serializable{
         this.row = row;
     }
 
-    public String getColumn() {
+    public int getColumn() {
         return column;
     }
 
-    public void setColumn(String column) {
+    public void setColumn(int column) {
         this.column = column;
     }
     
