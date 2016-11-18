@@ -16,7 +16,7 @@ public class StartProgramView extends View{
     
     private String displayMessage;
 
-    public StartProgramView() {
+    public StartProgramView(){
         super("\nPlease enter your name: ");
         //display the banner when the view is created
         this.displayBanner();

@@ -6,6 +6,7 @@
 package byui.cit260.strangerthings.control;
 
 
+import byui.cit260.strangerthings.model.Location;
 import byui.cit260.strangerthings.model.Map;
 import byui.cit260.strangerthings.model.Scene;
 import byui.cit260.strangerthings.model.SceneType;
@@ -27,9 +28,12 @@ public class MapControl{
         
         return map;
     }
+    
+    
 
     private static Scene[] createScenes() {
        Scene[] scenes = new Scene[SceneType.values().length];
+       
        Scene startingScene = new Scene();
        startingScene.setDescription(
                  "You have started your journey to save Eleven from the Government"
@@ -144,9 +148,27 @@ public class MapControl{
        
     }
     
-    public Map moveActorsToStartingLocation(){
+    public static Map moveActorsToStartingLocation(Map map){
         System.out.println("*** moveActorsToStartingLocation() called");
         return null;
     }
     
+    public void displayMap(){
+        System.out.println("\n                 Map View");
+        System.out.println("\n  1     2    3    4     5");
+        
+        for(int i = 1; i <=6; i++)
+        {
+            System.out.println("\n ------------------------");
+            System.out.println("\n" + i);
+            for(int j = 0; j <=5; j++)
+            {
+               System.out.println("|");
+               System.out.println(" ?? ");
+               System.out.println("|");
+            }
+    }
+    }
 }
+    
+
