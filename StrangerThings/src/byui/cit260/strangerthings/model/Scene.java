@@ -14,7 +14,7 @@ import java.util.Objects;
  */
 public class Scene implements Serializable {
     private String description;
-    private String blockedMonster;
+    private int blockedMonster;
     private String displaySymbol;
 
     public Scene() {
@@ -29,11 +29,11 @@ public class Scene implements Serializable {
         this.description = description;
     }
 
-    public String getBlockedMonster() {
+    public int getBlockedMonster() {
         return blockedMonster;
     }
 
-    public void setBlockedMonster(String blockedMonster) {
+    public void setBlockedMonster(int blockedMonster) {
         this.blockedMonster = blockedMonster;
     }
 

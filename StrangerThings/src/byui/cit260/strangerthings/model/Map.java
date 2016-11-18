@@ -97,8 +97,28 @@ public class Map implements Serializable{
     }
 
     public Location[][] getLocations() {
-        System.out.println("Get locations[][]");
-        return null;
+        return locations;
     }
+
+    public void setLocations(Location[][] locations) {
+        this.locations = locations;
+    }
+
+    public int getNoOfRows() {
+        return noOfRows;
+    }
+
+    public void setNoOfRows(int noOfRows) {
+        this.noOfRows = noOfRows;
+    }
+
+    public int getNoOfColumns() {
+        return noOfColumns;
+    }
+
+    public void setNoOfColumns(int noOfColumns) {
+        this.noOfColumns = noOfColumns;
+    }
+
     
 }

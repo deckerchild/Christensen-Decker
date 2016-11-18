@@ -5,6 +5,7 @@
  */
 package citbyui.cit260.strangerthings.view;
 
+import byui.cit260.strangerthings.control.MapControl;
 import byui.cit260.strangerthings.model.Game;
 import byui.cit260.strangerthings.model.Inventory;
 import java.util.ArrayList;
@@ -100,7 +101,8 @@ public class GameMenuView extends View{
     }
 
     private void mapView() {
-        System.out.println("*** mapView function called ***");
+        MapControl display = new MapControl();
+        display.displayMap();
     }
 
     private void saveGame() {
