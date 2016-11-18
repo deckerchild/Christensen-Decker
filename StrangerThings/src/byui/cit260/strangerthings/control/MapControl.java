@@ -137,16 +137,16 @@ public class MapControl {
 
     public void displayMap() {
         System.out.println("\n                 Map View");
-        System.out.println("\n  1     2    3    4     5");
-
-        for (int i = 1; i <= 6; i++) {
-            System.out.println("\n ------------------------");
-            System.out.println("\n" + i);
-            for (int j = 0; j <= 5; j++) {
-                System.out.println("|");
-                System.out.println(" ?? ");
-                System.out.println("|");
+        System.out.println("\n    1     2     3     4     5");
+        System.out.println(" ------------------------------");
+        for (int i = 1; i <= 5; i++) {
+            System.out.print(i);
+            for (int j = 0; j <= 4; j++) {
+                System.out.print("|");
+                System.out.print(" ?? ");
+                System.out.print("|");
             }
+           System.out.println("\n ------------------------------");        
         }
     }
 
