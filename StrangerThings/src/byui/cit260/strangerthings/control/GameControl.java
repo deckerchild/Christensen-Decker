@@ -5,6 +5,7 @@
  */
 package byui.cit260.strangerThings.control;
 
+import byui.cit260.strangerthings.control.MapControl;
 import byui.cit260.strangerthings.model.Game;
 import byui.cit260.strangerthings.model.Inventory;
 import byui.cit260.strangerthings.model.Item;
@@ -37,8 +38,9 @@ public class GameControl {
       
       Map map = MapControl.createMap();
       game.setMap(map);
+     
       
-      MapControl.moveCharacterToStartingLocation(map);
+      MapControl.moveActorsToStartingLocation(map);
       
       
   }
