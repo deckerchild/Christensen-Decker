@@ -5,7 +5,10 @@
  */
 package citbyui.cit260.strangerthings.view;
 
+import byui.cit260.strangerthings.model.Game;
 import byui.cit260.strangerthings.model.Inventory;
+import java.util.ArrayList;
+import strangerthings.StrangerThings;
 
 /**
  *
@@ -19,7 +22,7 @@ public class GameMenuView extends View{
                   +"\n In Game Menu"
                   +"\n-------------------------------------------"
                   +"\n M - Move"
-                  +"\n I - Inventory"
+                  +"\n I - View list of items in Inventory"
                   +"\n V - View Map"
                   +"\n S - Save Game"
                   +"\n H - Help"
@@ -72,8 +75,28 @@ public class GameMenuView extends View{
     }
 
     private void gameInventory() {
-        GameInventory gInventory = new GameInventory();
-        gInventory.display();
+        StringBuilder line;
+        
+        Game game = StrangerThings.getCurrentGame();
+        ArrayList<Inventory> inventory = game.getInventoryList();
+        
+        System.out.println("\n      LIST OF INVENTORY ITEMS");
+        line = new StringBuilder("                                           ");
+        line.insert(0, "DESCRIPTION");
+        line.insert(20, "REQUIRED");
+        line.insert(30, "IN STOCK");
+        System.out.println(line.toString());
+        
+        // for eah inventory item
+        for (Inventory item : inventory) {
+            line = new StringBuilder("                                       ");
+            line.insert(0, item.getDescription());
+            line.insert(23, item.getRequiredAmount());
+            line.insert(33, item.getQuantityInStock());
+        
+            // Display the line
+            System.out.println(line.toString());
+        }
     }
 
     private void mapView() {
