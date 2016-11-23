@@ -17,6 +17,7 @@ public class Player implements Serializable{
     private String attribute;
     private Game game;
     private Character character;
+    Location location;
 
     public Game getGame() {
         return game;
@@ -88,7 +89,13 @@ public class Player implements Serializable{
     public String toString() {
         return "Player{" + "name=" + name + ", attribute=" + attribute + '}';
     }
-    
+    public Location getLocation() {
+        return location;
+    }
+
+    public void setLocation(Location location) {
+        this.location = location;
+    }
     
     
     

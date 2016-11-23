@@ -5,6 +5,11 @@
  */
 package citbyui.cit260.strangerthings.view;
 
+import byui.cit260.strangerthings.control.MovementControl;
+import byui.cit260.strangerthings.model.Location;
+import static java.lang.System.console;
+import strangerthings.StrangerThings;
+
 /**
  *
  * @author tcfat
@@ -41,6 +46,9 @@ public class InGameMoveMenu extends View{
             case "W": // saves the game 
                 this.moveWest();
                 break;
+            case "M":
+                this.viewMap();
+                break;
             default:
                 System.out.println("\n*** Invalid Selection *** Try Again");
                 break;
@@ -49,20 +57,52 @@ public class InGameMoveMenu extends View{
         return false;
     }
 
-        private void moveNorth() {
-        System.out.println("*** Moving North ***");
+private void moveNorth(){
+        MovementControl mc = new MovementControl();
+            if(mc.moveNorth(StrangerThings.getCurrentGame()) == false){
+            System.out.println("You can't move North!");
         }
-
-        private void moveSouth() {
-        System.out.println("*** Moving South ***");
-        }
-
-        private void moveEast() {
-        System.out.println("*** Moving East ***");    
-        }
-
-        private void moveWest() {
-        System.out.println("*** Moving West ***");    
-        }
+        Location playerLocation = StrangerThings.getCurrentGame().getPlayer().getLocation();
+        System.out.println(
+                "\n Your locations is " + playerLocation.getRow() + ", " + playerLocation.getColumn()
+        );
+    }
     
+    private void moveEast(){
+        MovementControl mc = new MovementControl();
+            if(mc.moveEast(StrangerThings.getCurrentGame()) == false){
+            System.out.println("You can't move East!");
+        }
+        Location playerLocation = StrangerThings.getCurrentGame().getPlayer().getLocation();
+        System.out.println(
+                "\n Your locations is " + playerLocation.getRow() + ", " + playerLocation.getColumn()
+        );
+    }
+    
+    private void moveSouth(){
+        MovementControl mc = new MovementControl();
+            if(mc.moveSouth(StrangerThings.getCurrentGame()) == false){
+            System.out.println("You can't move South!");
+        }
+        Location playerLocation = StrangerThings.getCurrentGame().getPlayer().getLocation();
+        System.out.println(
+                "\n Your locations is " + playerLocation.getRow() + ", " + playerLocation.getColumn()
+        );
+    }
+    
+    private void moveWest(){
+        MovementControl mc = new MovementControl();
+            if(mc.moveWest(StrangerThings.getCurrentGame()) == false){
+            System.out.println("You can't move West!");
+        }
+        Location playerLocation = StrangerThings.getCurrentGame().getPlayer().getLocation();
+        System.out.println(
+                "\n Your locations is " + playerLocation.getRow() + ", " + playerLocation.getColumn()
+        );
+    }
+    
+    private void viewMap(){            
+        //System.out.println(StrangerThings.getCurrentGame().getMap().displayMap());
+    }
+       
 }

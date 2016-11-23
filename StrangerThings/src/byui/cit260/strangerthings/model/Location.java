@@ -39,50 +39,7 @@ public class Location implements Serializable{
     }
 
     public Location() {
-    }
-
-    @Override
-    public int hashCode() {
-        int hash = 7;
-        hash = 23 * hash + (this.visited ? 1 : 0);
-        hash = 23 * hash + Objects.hashCode(this.items);
-        hash = 23 * hash + this.row;
-        hash = 23 * hash + Objects.hashCode(this.column);
-        return hash;
-    }
-
-    @Override
-    public boolean equals(Object obj) {
-        if (this == obj) {
-            return true;
-        }
-        if (obj == null) {
-            return false;
-        }
-        if (getClass() != obj.getClass()) {
-            return false;
-        }
-        final Location other = (Location) obj;
-        if (this.visited != other.visited) {
-            return false;
-        }
-        if (this.row != other.row) {
-            return false;
-        }
-        if (!Objects.equals(this.items, other.items)) {
-            return false;
-        }
-        if (!Objects.equals(this.column, other.column)) {
-            return false;
-        }
-        return true;
-    }
-
-    @Override
-    public String toString() {
-        return "Location{" + "visited=" + visited + ", items=" + items + ", row=" + row + ", column=" + column + '}';
-    }
-    
+    }    
     
     public boolean isVisited() {
         return visited;

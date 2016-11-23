@@ -13,6 +13,10 @@ import java.util.Objects;
  * @author tcfat
  */
 public class Map implements Serializable{
+    
+    public static final int NUM_ROWS = 5;
+    public static final int NUM_COLS = 5;
+    
     private int row;
     private int column;
     private Location[][] locations;
@@ -120,5 +124,8 @@ public class Map implements Serializable{
         this.noOfColumns = noOfColumns;
     }
 
-    
+    public Location getLocation(int row, int column) {
+        return locations[row][column];
+    }
+   
 }
