@@ -88,7 +88,7 @@ public class GameMenuView extends View{
         line.insert(30, "IN STOCK");
         System.out.println(line.toString());
         
-        // for eah inventory item
+        // for each inventory item
         for (Inventory item : inventory) {
             line = new StringBuilder("                                       ");
             line.insert(0, item.getDescription());

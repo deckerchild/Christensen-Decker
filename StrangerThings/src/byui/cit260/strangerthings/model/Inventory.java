@@ -13,8 +13,9 @@ import java.util.Objects;
  * @author tcfat
  */
 public class Inventory implements Serializable{
-    private String inventoryType;
-    private int amount;
+    private String description;
+    private int requiredAmount;
+    private int quantityInStock;
     
    
     
@@ -66,8 +67,8 @@ public class Inventory implements Serializable{
     @Override
     public int hashCode() {
         int hash = 3;
-        hash = 53 * hash + Objects.hashCode(this.inventoryType);
-        hash = 53 * hash + this.amount;
+        hash = 53 * hash + Objects.hashCode(this.description);
+        hash = 53 * hash + this.requiredAmount;
         return hash;
     }
 
@@ -83,10 +84,10 @@ public class Inventory implements Serializable{
             return false;
         }
         final Inventory other = (Inventory) obj;
-        if (this.amount != other.amount) {
+        if (this.requiredAmount != other.requiredAmount) {
             return false;
         }
-        if (!Objects.equals(this.inventoryType, other.inventoryType)) {
+        if (!Objects.equals(this.description, other.description)) {
             return false;
         }
         return true;
@@ -94,25 +95,9 @@ public class Inventory implements Serializable{
 
     @Override
     public String toString() {
-        return "Inventory{" + "inventoryType=" + inventoryType + ", amount=" + amount + '}';
-    }
+        return "Inventory{" + "inventory type=" + description + ", required amount=" + requiredAmount + '}';
+    } 
 
-    
-    public String getInventoryType() {
-        return inventoryType;
-    }
-
-    public void setInventoryType(String inventoryType) {
-        this.inventoryType = inventoryType;
-    }
-
-    public int getAmount() {
-        return amount;
-    }
-
-    public void setAmount(int amount) {
-        this.amount = amount;
-    }
     public int getNails() {
         return nails;
     }
@@ -161,27 +146,29 @@ public class Inventory implements Serializable{
         this.sharpMetal = sharpMetal;
     }
 
-    public void setDescription(String nails) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    public String getDescription() {
+        return description;
     }
 
-    public void setQuantityInStock(int i) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    public void setDescription(String description) {
+        this.description = description;
     }
 
-    public void setRequiredAmount(int i) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    public int getRequiredAmount() {
+        return requiredAmount;
     }
 
-    public Object getDescription() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    public void setRequiredAmount(int requiredAmount) {
+        this.requiredAmount = requiredAmount;
     }
 
-    public Object getRequiredAmount() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    public int getQuantityInStock() {
+        return quantityInStock;
     }
 
-    public Object getQuantityInStock() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    public void setQuantityInStock(int quantityInStock) {
+        this.quantityInStock = quantityInStock;
     }
+    
+    
 }
