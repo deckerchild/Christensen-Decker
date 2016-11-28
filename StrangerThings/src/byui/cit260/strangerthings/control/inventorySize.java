@@ -13,6 +13,6 @@ import byui.cit260.strangerthings.model.Inventory;
  */
 public class inventorySize {
     
-    Inventory inventory = new Inventory();
-    Strangerthings.getInventoryList(Inventory);
+    //Inventory inventory = new Inventory();
+    //Strangerthings.getInventoryList(Inventory);
 }

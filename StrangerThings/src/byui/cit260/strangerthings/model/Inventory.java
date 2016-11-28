@@ -16,6 +16,8 @@ public class Inventory implements Serializable{
     private String inventoryType;
     private int amount;
     
+   
+    
     private int nails = 0;
     private int barbedWire = 0;
     private int glassShards = 0;
@@ -23,6 +25,23 @@ public class Inventory implements Serializable{
     private int rocks = 0;
     private int sharpMetal = 0;
     private Game game;
+    
+    public int[] getInventoryList(){
+        
+        int[] inventoryList;
+
+        //allocates memory for 10 integers
+        inventoryList = new int[10];
+        
+        // initialize first element
+        inventoryList[0] = nails;
+        inventoryList[1] = barbedWire;
+        inventoryList[2] = glassShards;
+        inventoryList[3] = thorns;
+        inventoryList[4] = rocks;
+        inventoryList[5] = sharpMetal;
+        return inventoryList;
+    }
 
     public Game getGame() {
         return game;
