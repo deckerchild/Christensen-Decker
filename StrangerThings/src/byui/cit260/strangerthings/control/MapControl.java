@@ -5,10 +5,13 @@
  */
 package byui.cit260.strangerthings.control;
 
+import byui.cit260.strangerthings.exceptions.MapControlException;
 import byui.cit260.strangerthings.model.Location;
 import byui.cit260.strangerthings.model.Map;
 import byui.cit260.strangerthings.model.Scene;
 import byui.cit260.strangerthings.model.SceneType;
+import java.awt.Point;
+import strangerthings.StrangerThings;
 
 /**
  *
@@ -129,11 +132,27 @@ public class MapControl {
         return scenes;
 
     }
+    
+    
 
-    public static Map moveActorsToStartingLocation(Map map) {
-        System.out.println("*** moveActorsToStartingLocation() called");
-        return null;
+    public static void moveActorToLocation(Character character, Point corrdinates) 
+                           throws MapControlException{
+        Map map = StrangerThings.getCurrentGame().getMap();
+        int newRow = corrdinates.x-1;
+        int newColumn = corrdinates.y-1;
+        
+        if(newRow < 0 || newRow >= map.getNoOfRows() ||
+                newColumn < 0 || newColumn >= map.getNoOfColumns()){
+            throw new MapControlException("Can not move character to location");
+        }
     }
+    public static int moveActorsToStartingLocation(Map map){
+       
+        
+        return 0;
+    }
+
+    
 
     public void displayMap() {
         System.out.println("\n                 Map View");

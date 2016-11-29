@@ -12,9 +12,8 @@ import byui.cit260.strangerthings.model.Item;
 import byui.cit260.strangerthings.model.Location;
 import byui.cit260.strangerthings.model.Map;
 import byui.cit260.strangerthings.model.Player;
-import byui.cit260.strangerthings.model.Scene;
-import byui.cit260.strangerthings.model.SceneType;
 import byui.cit260.strangerthings.model.Weapon;
+import java.awt.Point;
 import java.util.ArrayList;
 import strangerthings.StrangerThings;
 
@@ -24,6 +23,12 @@ import strangerthings.StrangerThings;
  */
 public class GameControl {
   public static void createNewGame(Player player){
+      
+      Location locationR = new Location();
+      locationR.getRow();
+      
+      Location locationC = new Location();
+      locationC.getColumn();
       
       Game game = new Game();
       StrangerThings.setCurrentGame(game);
@@ -38,12 +43,13 @@ public class GameControl {
       
       Map map = MapControl.createMap();
       game.setMap(map);
-     
+      Point pointLocation = new Point();
       
-      MapControl.moveActorsToStartingLocation(map);
       
+      //MapControl.moveActorsToStartingLocation(player, corrdinates);
       
   }
+  
   public static Player createPlayer(String name){
         if(name == null){
             return null;
