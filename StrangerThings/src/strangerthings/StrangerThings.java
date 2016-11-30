@@ -6,17 +6,7 @@
 package strangerthings;
 
 import byui.cit260.strangerthings.model.Game;
-import byui.cit260.strangerthings.model.Inventory;
-import byui.cit260.strangerthings.model.Location;
-import byui.cit260.strangerthings.model.Map;
 import byui.cit260.strangerthings.model.Player;
-import byui.cit260.strangerthings.model.Scene;
-import byui.cit260.strangerthings.model.ResourceType;
-import byui.cit260.strangerthings.model.Monster;
-
-
-import byui.cit260.strangerthings.model.Weapon;
-import byui.cit260.strangerthings.model.Character;
 import citbyui.cit260.strangerthings.view.StartProgramView;
 
 /**
@@ -31,7 +21,13 @@ public class StrangerThings {
     public static void main(String[] args) {
         
         StartProgramView startProgramView = new StartProgramView();
+        try {
         startProgramView.display();
+        }catch (Throwable te) {
+            System.out.println(te.getMessage());
+            te.printStackTrace();
+            startProgramView.display();
+        }
     }    
            
     public static Game getCurrentGame() {

@@ -5,6 +5,7 @@
  */
 package byui.cit260.strangerthings.control;
 
+import byui.cit260.strangerthings.model.Character;
 import byui.cit260.strangerthings.exceptions.MapControlException;
 import byui.cit260.strangerthings.model.Location;
 import byui.cit260.strangerthings.model.Map;
@@ -146,8 +147,16 @@ public class MapControl {
             throw new MapControlException("Can not move character to location");
         }
     }
-    public static int moveActorsToStartingLocation(Map map){
+    public static int moveActorsToStartingLocation(Map map)
+                                throws MapControlException{
        
+        Character[] characters = Character.values();
+        
+        for (Character character : characters){
+        Point corrdinates = character.getCorrdinates();
+        MapControl.moveActorToLocation(character, corrdinates);
+        
+        }
         
         return 0;
     }
