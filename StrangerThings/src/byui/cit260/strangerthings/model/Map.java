@@ -124,8 +124,5 @@ public class Map implements Serializable{
         this.noOfColumns = noOfColumns;
     }
 
-    public Location getLocation(int row, int column) {
-        return locations[row][column];
-    }
    
 }
