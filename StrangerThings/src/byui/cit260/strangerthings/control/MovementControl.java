@@ -77,7 +77,7 @@ public class MovementControl {
             return false;
         }
         
-        player.setLocation(map.getLocation(currentLocation.getRow(), currentLocation.getColumn() - 1));
+        player.setLocation(map.getLocation(currentLocation.getRow() + 1, currentLocation.getColumn()));
         
         return true;
     }
