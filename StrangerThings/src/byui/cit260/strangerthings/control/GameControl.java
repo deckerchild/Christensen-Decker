@@ -45,7 +45,7 @@ public class GameControl {
       game.setMap(map);
       Point pointLocation = new Point();
       
-      player.setLocation(map.getLocation(0, 5));
+      player.setLocation(map.getLocation(0, 3));
       //MapControl.moveActorsToStartingLocation(player, corrdinates);
       
   }

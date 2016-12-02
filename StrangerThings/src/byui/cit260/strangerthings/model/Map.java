@@ -124,8 +124,8 @@ public class Map implements Serializable{
         this.noOfColumns = noOfColumns;
     }
 
-    public Location getLocation(int i, int column) {
-        throw new UnsupportedOperationException("Not supported yet."); //NEEDS TO BE REMOVED
+    public Location getLocation(int row, int column) {
+        return this.locations[row][column];
     }
 
     

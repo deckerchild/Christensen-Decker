@@ -58,77 +58,77 @@ public class MapControl {
                 "You have found some nails");
         nailScene.setDisplaySymbol(" NL ");
         nailScene.setBlockedMonster(0);
-        scenes[SceneType.nails.ordinal()] = finishScene;
+        scenes[SceneType.nails.ordinal()] = nailScene;
         
         Scene shackScene = new Scene();
         shackScene.setDescription(
                 "You have arrived at the shack");
         shackScene.setDisplaySymbol(" SK ");
         shackScene.setBlockedMonster(0);
-        scenes[SceneType.shack.ordinal()] = finishScene;
+        scenes[SceneType.shack.ordinal()] = shackScene;
         
         Scene monsterScene = new Scene();
         monsterScene.setDescription(
                 "You have found the monster");
         monsterScene.setDisplaySymbol(" MS ");
         monsterScene.setBlockedMonster(0);
-        scenes[SceneType.monster.ordinal()] = finishScene;
+        scenes[SceneType.monster.ordinal()] = monsterScene;
         
         Scene governmentScene = new Scene();
         governmentScene.setDescription(
                 "They found you");
         governmentScene.setDisplaySymbol(" GV ");
         governmentScene.setBlockedMonster(0);
-        scenes[SceneType.government.ordinal()] = finishScene;
+        scenes[SceneType.government.ordinal()] = governmentScene;
         
         Scene sherifScene = new Scene();
         sherifScene.setDescription(
                 "He found you");
         sherifScene.setDisplaySymbol(" SH ");
         sherifScene.setBlockedMonster(0);
-        scenes[SceneType.sherif.ordinal()] = finishScene;
+        scenes[SceneType.sherif.ordinal()] = sherifScene;
         
         Scene upsideDownScene = new Scene();
         upsideDownScene.setDescription(
                 "You found the upside down enter if you dare");
         upsideDownScene.setDisplaySymbol(" UD ");
         upsideDownScene.setBlockedMonster(0);
-        scenes[SceneType.upsideDown.ordinal()] = finishScene;
+        scenes[SceneType.upsideDown.ordinal()] = upsideDownScene;
         
         Scene barbedWireScene = new Scene();
         barbedWireScene.setDescription(
                 "You found some barbed wire for your weapon");
         barbedWireScene.setDisplaySymbol(" BW ");
         barbedWireScene.setBlockedMonster(0);
-        scenes[SceneType.barbedWire.ordinal()] = finishScene;
+        scenes[SceneType.barbedWire.ordinal()] = barbedWireScene;
         
         Scene glassShardsScene = new Scene();
         glassShardsScene.setDescription(
                 "You found some glass shards for your weapon");
         glassShardsScene.setDisplaySymbol(" GS ");
         glassShardsScene.setBlockedMonster(0);
-        scenes[SceneType.glassShards.ordinal()] = finishScene;
+        scenes[SceneType.glassShards.ordinal()] = glassShardsScene;
         
         Scene thornsScene = new Scene();
         thornsScene.setDescription(
                 "You found some thorns for your weapon");
         thornsScene.setDisplaySymbol(" TH ");
         thornsScene.setBlockedMonster(0);
-        scenes[SceneType.thorns.ordinal()] = finishScene;
+        scenes[SceneType.thorns.ordinal()] = thornsScene;
         
         Scene rockScene = new Scene();
         rockScene.setDescription(
                 "You found some rocks for your weapon");
         rockScene.setDisplaySymbol(" RK ");
         rockScene.setBlockedMonster(0);
-        scenes[SceneType.rock.ordinal()] = finishScene;
+        scenes[SceneType.rock.ordinal()] = rockScene;
         
         Scene sharpMetalScene = new Scene();
         sharpMetalScene.setDescription(
                 "You found some peices of sharp metal for your weapon");
         sharpMetalScene.setDisplaySymbol(" SM ");
         sharpMetalScene.setBlockedMonster(0);
-        scenes[SceneType.sharpMetal.ordinal()] = finishScene;
+        scenes[SceneType.sharpMetal.ordinal()] = sharpMetalScene;
         
         return scenes;
         
@@ -162,10 +162,10 @@ public class MapControl {
     
     public void displayMap() {
         Location[][] locations = StrangerThings.getCurrentGame().getMap().getLocations();
-        System.out.println("\n                 Map View");
-        System.out.println("\n    1     2     3     4     5");
-        System.out.println(" ------------------------------");
-        for (int i = 1; i <= 5; i++) {
+        System.out.println("\n         Map View");
+        System.out.println("\n    0     1     2     3     4");
+        System.out.print(" ------------------------------");
+        for (int i = 0; i < 5; i++) {
             System.out.print("\n" + i);
             for (int j = 0; j <= 4; j++) {
                 System.out.print("|");
@@ -177,7 +177,7 @@ public class MapControl {
                 }
                 System.out.print("|");
             }
-            System.out.println("\n ------------------------------");            
+            System.out.print("\n ------------------------------");            
         }
     }
     
