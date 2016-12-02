@@ -6,6 +6,7 @@
 package citbyui.cit260.strangerthings.view;
 
 import byui.cit260.strangerthings.control.MovementControl;
+import byui.cit260.strangerthings.exceptions.MovementControlException;
 import byui.cit260.strangerthings.model.Location;
 import static java.lang.System.console;
 import strangerthings.StrangerThings;
@@ -59,8 +60,10 @@ public class InGameMoveMenu extends View{
 
 private void moveNorth(){
         MovementControl mc = new MovementControl();
-            if(mc.moveNorth(StrangerThings.getCurrentGame()) == false){
-            System.out.println("You can't move North!");
+        try{
+            mc.moveNorth(StrangerThings.getCurrentGame());
+        }catch(MovementControlException me){
+            System.out.println(me.getMessage());
         }
         Location playerLocation = StrangerThings.getCurrentGame().getPlayer().getLocation();
         System.out.println(
@@ -70,8 +73,12 @@ private void moveNorth(){
     
     private void moveEast(){
         MovementControl mc = new MovementControl();
-            if(mc.moveEast(StrangerThings.getCurrentGame()) == false){
-            System.out.println("You can't move East!");
+        try{
+           mc.moveEast(StrangerThings.getCurrentGame());
+            
+        
+        }catch(MovementControlException me){
+            System.out.println(me.getMessage());
         }
         Location playerLocation = StrangerThings.getCurrentGame().getPlayer().getLocation();
         System.out.println(
@@ -81,8 +88,11 @@ private void moveNorth(){
     
     private void moveSouth(){
         MovementControl mc = new MovementControl();
-            if(mc.moveSouth(StrangerThings.getCurrentGame()) == false){
-            System.out.println("You can't move South!");
+        try{
+           mc.moveSouth(StrangerThings.getCurrentGame());
+           
+        }catch(MovementControlException me){
+            System.out.println(me.getMessage());
         }
         Location playerLocation = StrangerThings.getCurrentGame().getPlayer().getLocation();
         System.out.println(

@@ -5,6 +5,7 @@
  */
 package citbyui.cit260.strangerthings.view;
 
+
 import java.util.Scanner;
 
 /**
@@ -35,12 +36,13 @@ public abstract class View implements ViewInterface {
         }while (!done);
     }
     @Override
-    public String getInput(){
+    public  String getInput()
+                      {
         Scanner keyboard = new Scanner(System.in); // get the infile for keyboard
         String value = ""; // value to be returned
         boolean valid = false; // intialized to not valid
         
-        while (!valid){ // loop while an invalide valur is entered
+        while (!valid){ // loop while an invalide value is entered
             System.out.println("\n" + this.displayMessage);
             
             value = keyboard.nextLine(); // get next line typed on the keyboard
@@ -49,6 +51,7 @@ public abstract class View implements ViewInterface {
             if(value.length() < 1){ // value is blank
                 System.out.println("\nInvalid value: value can not be blank");
                 continue;
+                
             }
             
             break; // end loop

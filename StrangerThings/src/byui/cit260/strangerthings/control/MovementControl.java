@@ -5,6 +5,7 @@
  */
 package byui.cit260.strangerthings.control;
 
+import byui.cit260.strangerthings.exceptions.MovementControlException;
 import byui.cit260.strangerthings.model.Game;
 import byui.cit260.strangerthings.model.Location;
 import byui.cit260.strangerthings.model.Map;
@@ -17,14 +18,15 @@ import byui.cit260.strangerthings.model.Player;
 public class MovementControl {
     
     
-    public boolean moveNorth(Game game) {
+    public void moveNorth(Game game) 
+                            throws MovementControlException{
         
         Player player = game.getPlayer();
         Location currentLocation = player.getLocation();
         Map map = game.getMap();
         
         if(currentLocation.getRow() == 0) {
-            return false;
+            throw new MovementControlException ("ERROR: You cannot move to a non existing row");
         }
         
         int currentCol = currentLocation.getColumn();
@@ -34,37 +36,37 @@ public class MovementControl {
         Location newLocation = map.getLocation(newRow, currentCol);
         player.setLocation(newLocation);
         
-        return true;
+        return;
     }
     
-    public boolean moveEast(Game game) {
+    public void moveEast(Game game) 
+                               throws MovementControlException{
         
         Player player = game.getPlayer();
         Location currentLocation = player.getLocation();
         Map map = game.getMap();
         
         if(currentLocation.getColumn() == Map.NUM_COLS - 1) {
-            return false;
-        }
-        
+            throw new MovementControlException ("Error: You cannot move to a non existing row");
+        }  
         player.setLocation(map.getLocation(currentLocation.getRow(), currentLocation.getColumn() + 1));
-        
-        return true;
+    
+        return;
     }
     
-    public boolean moveSouth(Game game) {
+    public void moveSouth(Game game) throws MovementControlException{
         
         Player player = game.getPlayer();
         Location currentLocation = player.getLocation();
         Map map = game.getMap();
         
         if(currentLocation.getRow() == Map.NUM_ROWS - 1) {
-            return false;
+            throw new MovementControlException("Error: You cannot move to a location outside of the map");
         }
         
         player.setLocation(map.getLocation(currentLocation.getRow() + 1, currentLocation.getColumn()));
         
-        return true;
+        return;
     }
     
     public boolean moveWest(Game game) {
