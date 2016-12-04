@@ -36,7 +36,6 @@ public class MovementControl {
         Location newLocation = map.getLocation(newRow, currentCol);
         player.setLocation(newLocation);
         
-        return;
     }
     
     public void moveEast(Game game) 
@@ -51,7 +50,6 @@ public class MovementControl {
         }  
         player.setLocation(map.getLocation(currentLocation.getRow(), currentLocation.getColumn() + 1));
     
-        return;
     }
     
     public void moveSouth(Game game) throws MovementControlException{
@@ -66,7 +64,6 @@ public class MovementControl {
         
         player.setLocation(map.getLocation(currentLocation.getRow() + 1, currentLocation.getColumn()));
         
-        return;
     }
     
     public boolean moveWest(Game game) {

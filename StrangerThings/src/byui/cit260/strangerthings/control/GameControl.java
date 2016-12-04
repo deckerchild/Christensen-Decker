@@ -6,6 +6,7 @@
 package byui.cit260.strangerThings.control;
 
 import byui.cit260.strangerthings.control.MapControl;
+import byui.cit260.strangerthings.exceptions.ErrorView;
 import byui.cit260.strangerthings.model.Game;
 import byui.cit260.strangerthings.model.Inventory;
 import byui.cit260.strangerthings.model.Item;
@@ -14,6 +15,10 @@ import byui.cit260.strangerthings.model.Map;
 import byui.cit260.strangerthings.model.Player;
 import byui.cit260.strangerthings.model.Weapon;
 import java.awt.Point;
+import java.io.FileInputStream;
+import java.io.FileOutputStream;
+import java.io.ObjectInputStream;
+import java.io.ObjectOutputStream;
 import java.util.ArrayList;
 import strangerthings.StrangerThings;
 
@@ -104,6 +109,34 @@ public class GameControl {
         inventoryList[Item.sharpMetal.ordinal()] = sharpMetal;
         
         return inventoryList;
+    }
+    
+        public static void saveGame(String filePath) {
+        try {
+            FileOutputStream fos = new FileOutputStream(filePath);
+            ObjectOutputStream oos = new ObjectOutputStream(fos);
+            
+            oos.writeObject(StrangerThings.getGame());
+        } catch(Exception e) {
+            ErrorView.display("ProgramController", e.getMessage());
+            
+        }
+    }
+    
+    public static void loadGame(String filePath) {
+        Game game = null;
+        
+        try {
+            FileInputStream fis = new FileInputStream(filePath);
+            ObjectInputStream ois = new ObjectInputStream(fis);
+            
+            game = (Game)ois.readObject();
+            
+            StrangerThings.setGame(game);
+            StrangerThings.setPlayer(game.getPlayer());
+        } catch (Exception e) {
+            ErrorView.display("ProgramController", e.getMessage());
+        }
     }
     
     
