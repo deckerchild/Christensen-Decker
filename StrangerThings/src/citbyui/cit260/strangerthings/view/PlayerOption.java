@@ -8,7 +8,10 @@ package citbyui.cit260.strangerthings.view;
 
 import byui.cit260.strangerthings.control.EventControl;
 import byui.cit260.strangerthings.control.WeaponControl;
+import java.io.IOException;
 import java.util.Scanner;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 /**
  *
@@ -56,19 +59,27 @@ public class PlayerOption extends View{
         
         System.out.println("\nYou are attacking the monster your weapon has a mass "
                 + "of "+ mass +" you need to choose how fast you swing it and how hard it is swung.");
-        Scanner keyboard = new Scanner(System.in); // get the infile for keyboard
+      
             boolean valid = false; // intialized to not valid
         
         while (!valid){ // loop while an invalide value is entered
             System.out.println("\nPlease enter how long it takes for your weapon to hit the monster in seconds.");
             
-            value = keyboard.nextLine(); // get next line typed on the keyboard
+            try {
+                value = keyboard.readLine(); // get next line typed on the keyboard
+            } catch (IOException ex) {
+                Logger.getLogger(PlayerOption.class.getName()).log(Level.SEVERE, null, ex);
+            }
             value = value.trim(); // trim off leading and trailing blanks
             speed = Double.parseDouble(value);
             
             System.out.println("\nPlease enter how fast you will swing the weapon in meters per sec");
              
-            number = keyboard.nextLine(); // get next line typed on the keyboard
+            try {
+                number = keyboard.readLine(); // get next line typed on the keyboard
+            } catch (IOException ex) {
+                Logger.getLogger(PlayerOption.class.getName()).log(Level.SEVERE, null, ex);
+            }
             number = number.trim(); // trim off leading and trailing blanks
             hard = Double.parseDouble(number);
             

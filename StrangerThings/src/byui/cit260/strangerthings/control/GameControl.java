@@ -6,7 +6,7 @@
 package byui.cit260.strangerThings.control;
 
 import byui.cit260.strangerthings.control.MapControl;
-import byui.cit260.strangerthings.exceptions.ErrorView;
+import citbyui.cit260.strangerthings.view.ErrorView;
 import byui.cit260.strangerthings.model.Game;
 import byui.cit260.strangerthings.model.Inventory;
 import byui.cit260.strangerthings.model.Item;
@@ -118,7 +118,7 @@ public class GameControl {
             
             oos.writeObject(StrangerThings.getGame());
         } catch(Exception e) {
-            ErrorView.display("ProgramController", e.getMessage());
+            ErrorView.display("ProgramControl", e.getMessage());
             
         }
     }
@@ -135,7 +135,7 @@ public class GameControl {
             StrangerThings.setGame(game);
             StrangerThings.setPlayer(game.getPlayer());
         } catch (Exception e) {
-            ErrorView.display("ProgramController", e.getMessage());
+            ErrorView.display("ProgramControl", e.getMessage());
         }
     }
     

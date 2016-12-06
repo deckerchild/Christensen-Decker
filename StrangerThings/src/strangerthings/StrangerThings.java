@@ -9,6 +9,7 @@ import byui.cit260.strangerthings.model.Game;
 import byui.cit260.strangerthings.model.Player;
 import citbyui.cit260.strangerthings.view.StartProgramView;
 import java.io.BufferedReader;
+import java.io.InputStreamReader;
 import java.io.PrintWriter;
 
 /**
@@ -19,20 +20,43 @@ public class StrangerThings {
 
     private static Game currentGame = null;
     private static Player player = null;
-    private static BufferedReader inFile;
-    private static PrintWriter outFile;
+    private static BufferedReader inFile = null;
+    private static PrintWriter outFile = null;
     
-    private static PrintWriter logFile;
+    private static PrintWriter logFile = null;
     
     public static void main(String[] args) {
         
-        StartProgramView startProgramView = new StartProgramView();
+        StartProgramView startProgram = null;
         try {
+        StrangerThings.inFile = new BufferedReader(new InputStreamReader(System.in));
+        StrangerThings.outFile = new PrintWriter(System.out, true);
+        String logPath = "log.txt";
+        StrangerThings.logFile = new PrintWriter(logPath);
+        
+        StartProgramView startProgramView = new StartProgramView();
+        
         startProgramView.display();
-        }catch (Throwable te) {
-            System.out.println(te.getMessage());
-            te.printStackTrace();
-            startProgramView.display();
+    } catch (Throwable e) {
+        System.out.println("Exception: " + e.toString() +
+                           "\nCause: " + e.getCause() + 
+                           "\nMessage: " + e.getMessage());
+        e.printStackTrace();    
+        
+    } finally {
+            try {
+                if (StrangerThings.inFile != null) {
+                    StrangerThings.inFile.close();
+                }
+                if (StrangerThings.outFile != null) {
+                    StrangerThings.outFile.close();
+                }
+                if (StrangerThings.logFile != null) {
+                    StrangerThings.logFile.close();
+                }
+            } catch (Throwable ex) {
+                System.out.println("Error closing files");
+            }
         }
     }    
            

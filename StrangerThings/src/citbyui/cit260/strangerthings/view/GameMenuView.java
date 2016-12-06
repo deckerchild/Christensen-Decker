@@ -86,7 +86,7 @@ public class GameMenuView extends View{
         line.insert(0, "DESCRIPTION");
         line.insert(20, "REQUIRED");
         line.insert(30, "IN STOCK");
-        System.out.println(line.toString());
+        this.console.println(line.toString());
         
         // for each inventory item
         for (Inventory item : inventory) {
@@ -96,7 +96,7 @@ public class GameMenuView extends View{
             line.insert(33, item.getQuantityInStock());
         
             // Display the line
-            System.out.println(line.toString());
+            this.console.println(line.toString());
         }
     }
 
@@ -106,7 +106,8 @@ public class GameMenuView extends View{
     }
 
     private void saveGame() {
-        System.out.println("*** saveGame function called ***");
+        LoadMenuView loadMenu = new LoadMenuView();
+        loadMenu.display();
     }
 
     private void helpMenu() {

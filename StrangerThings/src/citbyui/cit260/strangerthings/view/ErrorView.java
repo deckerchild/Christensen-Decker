@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package byui.cit260.strangerthings.exceptions;
+package citbyui.cit260.strangerthings.view;
 
 import java.io.PrintWriter;
 import strangerthings.StrangerThings;

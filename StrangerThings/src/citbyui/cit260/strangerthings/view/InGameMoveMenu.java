@@ -63,7 +63,7 @@ private void moveNorth(){
         try{
             mc.moveNorth(StrangerThings.getCurrentGame());
         }catch(MovementControlException me){
-            System.out.println(me.getMessage());
+            this.console.println(me.getMessage());
         }
         Location playerLocation = StrangerThings.getCurrentGame().getPlayer().getLocation();
         System.out.println(
@@ -78,7 +78,7 @@ private void moveNorth(){
             
         
         }catch(MovementControlException me){
-            System.out.println(me.getMessage());
+            this.console.println(me.getMessage());
         }
         Location playerLocation = StrangerThings.getCurrentGame().getPlayer().getLocation();
         System.out.println(
@@ -92,7 +92,7 @@ private void moveNorth(){
            mc.moveSouth(StrangerThings.getCurrentGame());
            
         }catch(MovementControlException me){
-            System.out.println(me.getMessage());
+            this.console.println(me.getMessage());
         }
         Location playerLocation = StrangerThings.getCurrentGame().getPlayer().getLocation();
         System.out.println(
