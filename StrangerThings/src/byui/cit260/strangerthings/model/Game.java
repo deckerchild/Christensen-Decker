@@ -18,6 +18,7 @@ public class Game implements Serializable{
     private Weapon weapon;
     private Map map;
     private Player player;
+    private Inventory[] inventoryList;
 
     public Player getPlayer() {
         return player;
@@ -26,7 +27,7 @@ public class Game implements Serializable{
     public void setPlayer(Player player) {
         this.player = player;
     }
-    ArrayList<Inventory> inventoryList = new ArrayList<Inventory>();
+    //ArrayList<Inventory> inventoryList = new ArrayList<Inventory>();
     
     public Map getMap() {
         return map;
@@ -40,11 +41,11 @@ public class Game implements Serializable{
     public Game() {
     }
 
-    public ArrayList<Inventory> getInventoryList() {
+    public Inventory[] getInventoryList() {
         return inventoryList;
     }
 
-    public void setInventoryList(ArrayList<Inventory> inventoryList) {
+    public void setInventoryList(Inventory[] inventoryList) {
         this.inventoryList = inventoryList;
     }
 
@@ -106,5 +107,7 @@ public class Game implements Serializable{
     public void setNumPlayers(int numPlayers) {
         this.numPlayers = numPlayers;
     }
+
+    
     
 }

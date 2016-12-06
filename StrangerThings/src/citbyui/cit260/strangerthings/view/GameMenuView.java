@@ -79,7 +79,7 @@ public class GameMenuView extends View{
         StringBuilder line;
         
         Game game = StrangerThings.getCurrentGame();
-        ArrayList<Inventory> inventory = game.getInventoryList();
+        Inventory[] inventory = game.getInventoryList();
         
         System.out.println("\n      LIST OF INVENTORY ITEMS");
         line = new StringBuilder("                                           ");
