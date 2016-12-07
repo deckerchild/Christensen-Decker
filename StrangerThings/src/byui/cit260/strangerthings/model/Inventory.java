@@ -27,6 +27,7 @@ public class Inventory implements Serializable{
     private int sharpMetal = 0;
     private Game game;
     
+    
     public int[] getInventoryList(){
         
         int[] inventoryList;

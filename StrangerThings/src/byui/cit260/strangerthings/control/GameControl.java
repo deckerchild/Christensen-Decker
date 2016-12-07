@@ -73,39 +73,39 @@ public class GameControl {
         
         Inventory nails = new Inventory();
         nails.setDescription("Nails");
-        nails.setQuantityInStock(0);
-        nails.setRequiredAmount(0);
+        nails.setQuantityInStock(1);
+        nails.setRequiredAmount(10);
         inventoryList[Item.nails.ordinal()] = nails;
         
         Inventory barbedWire = new Inventory();
         barbedWire.setDescription("Barbed Wire");
-        barbedWire.setQuantityInStock(0);
-        barbedWire.setRequiredAmount(0);
+        barbedWire.setQuantityInStock(5);
+        barbedWire.setRequiredAmount(2);
         inventoryList[Item.barbedWire.ordinal()] = barbedWire;
         
         
         Inventory glassShards = new Inventory();
         glassShards.setDescription("Glass Shards");
-        glassShards.setQuantityInStock(0);
-        glassShards.setRequiredAmount(0);
+        glassShards.setQuantityInStock(4);
+        glassShards.setRequiredAmount(20);
         inventoryList[Item.glassShards.ordinal()] = glassShards;
         
         Inventory thorns = new Inventory();
         thorns.setDescription("thorns");
-        thorns.setQuantityInStock(0);
-        thorns.setRequiredAmount(0);
+        thorns.setQuantityInStock(6);
+        thorns.setRequiredAmount(100);
         inventoryList[Item.thorns.ordinal()] = thorns;
         
         Inventory rock = new Inventory();
         rock.setDescription("rock");
-        rock.setQuantityInStock(0);
-        rock.setRequiredAmount(0);
+        rock.setQuantityInStock(50);
+        rock.setRequiredAmount(50);
         inventoryList[Item.rock.ordinal()] = rock;
         
         Inventory sharpMetal = new Inventory();
         sharpMetal.setDescription("Sharpened Metal");
-        sharpMetal.setQuantityInStock(0);
-        sharpMetal.setRequiredAmount(0);
+        sharpMetal.setQuantityInStock(2);
+        sharpMetal.setRequiredAmount(2);
         inventoryList[Item.sharpMetal.ordinal()] = sharpMetal;
         
         return inventoryList;
