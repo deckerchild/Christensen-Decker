@@ -22,7 +22,7 @@ public enum Character implements Serializable {
     private final String description;
     private Game game;
     private Location location;
-    private int health = 0;
+   
 
     public Game getGame() {
         return game;
@@ -36,13 +36,7 @@ public enum Character implements Serializable {
         return location;
     }
 
-    public int getHealth() {
-        return health;
-    }
-
-    public void setHealth(int health) {
-        this.health = health;
-    }
+    
     
 
     public void setLocation(Location location) {

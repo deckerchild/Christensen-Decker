@@ -19,7 +19,16 @@ public class Game implements Serializable{
     private Map map;
     private Player player;
     private Inventory[] inventoryList;
+    private int health = 5;
 
+    public int getHealth() {
+        return health;
+    }
+
+    public void setHealth(int health) {
+        this.health = health;
+    }
+    
     public Player getPlayer() {
         return player;
     }

@@ -70,10 +70,15 @@ public class GameControl {
    }
   
   private static Character[] createCharacterList(){
-      Character[] characterList = new Character[3];
+      Character[] characterList = Character.values();
       
-      Character mike = new Character();
-      mike.setHealth(50);
+      for (int i = 0; i < characterList.length; i++) {
+          Character character = characterList[i];
+          
+          System.out.println(character.getDescription());
+          System.out.println(character.name());
+          
+      }
       
       return null;
   }
