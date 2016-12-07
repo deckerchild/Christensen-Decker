@@ -14,6 +14,7 @@ import byui.cit260.strangerthings.model.Location;
 import byui.cit260.strangerthings.model.Map;
 import byui.cit260.strangerthings.model.Player;
 import byui.cit260.strangerthings.model.Weapon;
+import byui.cit260.strangerthings.model.Character;
 import java.awt.Point;
 import java.io.FileInputStream;
 import java.io.FileOutputStream;
@@ -67,6 +68,20 @@ public class GameControl {
         
         return player;
    }
+  
+  private static Character[] createCharacterList(){
+      Character[] characterList = Character.values();
+      
+      for (int i = 0; i < characterList.length; i++) {
+          Character character = characterList[i];
+          
+          System.out.println(character.getDescription());
+          System.out.println(character.name());
+          
+      }
+      
+      return null;
+  }
 
     private static Inventory[] createInventoryList() {
         Inventory[] inventoryList = new Inventory[6];

@@ -7,6 +7,7 @@ package byui.cit260.strangerthings.control;
 
 import byui.cit260.strangerthings.model.Character;
 import byui.cit260.strangerthings.exceptions.MapControlException;
+import byui.cit260.strangerthings.model.CharacterList;
 import byui.cit260.strangerthings.model.Location;
 import byui.cit260.strangerthings.model.Map;
 import byui.cit260.strangerthings.model.Scene;

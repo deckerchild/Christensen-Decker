@@ -4,25 +4,21 @@
  * and open the template in the editor.
  */
 package byui.cit260.strangerthings.model;
+
 import java.awt.Point;
 import java.io.Serializable;
-import java.util.Objects;
+
 /**
  *
  * @author mount
  */
-public enum Character implements Serializable {
-    
-    Mike("This is Mike"),
-    Lucas("This is Lucas"),
-    Dustin("This is Dustin"),
-    Eleven("This is Eleven");
+public class CharacterList implements Serializable{
     
     private final Point corrdinates;
     private final String description;
     private Game game;
     private Location location;
-   
+    private int health = 0;
 
     public Game getGame() {
         return game;
@@ -36,26 +32,26 @@ public enum Character implements Serializable {
         return location;
     }
 
-    
+    public int getHealth() {
+        return health;
+    }
+
+    public void setHealth(int health) {
+        this.health = health;
+    }
     
 
     public void setLocation(Location location) {
         this.location = location;
     }
 
-    Character(String description) {
+    CharacterList(String description) {
         this.description = description;
         corrdinates = new Point(1,1);
         
         
     }
 
-    public Point getCorrdinates() {
-        return corrdinates;
-    }
-
-    public String getDescription() {
-        return description;
-    }
-
+    
+    
 }
