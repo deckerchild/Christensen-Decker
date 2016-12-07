@@ -40,7 +40,7 @@ public class GameControl {
        
       game.setPlayer(player);
       
-      ArrayList<Inventory> inventoryList = new ArrayList<>();
+      Inventory[] inventoryList = GameControl.createInventoryList();
       game.setInventoryList(inventoryList);
      
       Weapon weapon = new Weapon();
@@ -103,7 +103,7 @@ public class GameControl {
         inventoryList[Item.rock.ordinal()] = rock;
         
         Inventory sharpMetal = new Inventory();
-        sharpMetal.setDescription("Sharpened Piece of Metal!");
+        sharpMetal.setDescription("Sharpened Metal");
         sharpMetal.setQuantityInStock(0);
         sharpMetal.setRequiredAmount(0);
         inventoryList[Item.sharpMetal.ordinal()] = sharpMetal;
