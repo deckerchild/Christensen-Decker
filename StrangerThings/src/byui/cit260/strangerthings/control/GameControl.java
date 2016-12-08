@@ -18,8 +18,10 @@ import byui.cit260.strangerthings.model.Character;
 import java.awt.Point;
 import java.io.FileInputStream;
 import java.io.FileOutputStream;
+import java.io.IOException;
 import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
+import java.io.PrintWriter;
 import java.util.ArrayList;
 import strangerthings.StrangerThings;
 
@@ -69,18 +71,29 @@ public class GameControl {
         return player;
    }
   
-  private static Character[] createCharacterList(){
+  public void createCharacterList(String outputLocation){
+      
+      Game game = new Game();
+      
+      try(PrintWriter out = new PrintWriter(outputLocation)){
+          
+      
       Character[] characterList = Character.values();
+      
+          out.println("\n\n                Character Report               ");
+          out.printf("%n%-20s%10s%10s", "Description", "HealthMax", "HealthMin");
+          out.printf("%n%-20s%10s%10s", "----------", "--------", "------");
       
       for (int i = 0; i < characterList.length; i++) {
           Character character = characterList[i];
-          
-          System.out.println(character.getDescription());
-          System.out.println(character.name());
-          
+          out.printf("%n%-20s%7d%13.2f", character.getDescription()
+                                       , game.getHealth()
+                                       , game.getMinHealth());
       }
       
-      return null;
+      }catch (IOException ex){
+          System.out.println("I/O Error: " + ex.getMessage());
+      }
   }
 
     private static Inventory[] createInventoryList() {
