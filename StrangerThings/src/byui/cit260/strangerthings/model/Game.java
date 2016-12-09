@@ -20,7 +20,17 @@ public class Game implements Serializable{
     private Player player;
     private Inventory[] inventoryList;
     private int health = 5;
+    private int minHealth = 0;
 
+    public int getMinHealth() {
+        return minHealth;
+    }
+
+    public void setMinHealth(int minHealth) {
+        this.minHealth = minHealth;
+    }
+
+    
     public int getHealth() {
         return health;
     }
