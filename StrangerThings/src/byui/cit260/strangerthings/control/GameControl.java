@@ -22,7 +22,7 @@ import java.io.IOException;
 import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
 import java.io.PrintWriter;
-import java.util.ArrayList;
+import static java.lang.System.out;
 import strangerthings.StrangerThings;
 
 /**
@@ -94,6 +94,28 @@ public class GameControl {
       }catch (IOException ex){
           System.out.println("I/O Error: " + ex.getMessage());
       }
+  }
+  
+  private void createInventoryReport(String outputLocation){
+      
+      try(PrintWriter out = new PrintWriter(outputLocation)){
+      Inventory[] inventoryList = new Inventory[6];
+      
+          out.println("\n\n                Inventory Report               ");
+          out.printf("%n%-20s%10s%10s", "Description", "Quantity", "Actual Quantity");
+          out.printf("%n%-20s%10s%10s", "----------", "--------", "----------");
+           
+          for(int i = 0; i < 7; i++)
+          {
+              Inventory inventory = inventoryList[i];
+              out.printf("%n%-20s%7d%13.2f", inventory.getDescription()
+                                       , inventory.getRequiredAmount()
+                                       , inventory.getQuantityInStock());
+          }
+          
+      }catch(IOException ex){
+                  System.out.println("I/O Error:" + ex.getMessage());
+                  }
   }
 
     private static Inventory[] createInventoryList() {
