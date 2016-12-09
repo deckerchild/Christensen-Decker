@@ -13,6 +13,7 @@ import byui.cit260.strangerthings.model.Map;
 import byui.cit260.strangerthings.model.Scene;
 import byui.cit260.strangerthings.model.SceneType;
 import java.awt.Point;
+import java.io.PrintWriter;
 import strangerthings.StrangerThings;
 
 /**
@@ -161,24 +162,24 @@ public class MapControl {
         return 0;
     }
     
-    public void displayMap() {
+    public void displayMap(PrintWriter outFile) {
         Location[][] locations = StrangerThings.getCurrentGame().getMap().getLocations();
-        System.out.println("\n         Map View");
-        System.out.println("\n    0     1     2     3     4");
-        System.out.print(" ------------------------------");
+        outFile.println("\n         Map View");
+        outFile.println("\n    0     1     2     3     4");
+        outFile.print(" ------------------------------");
         for (int i = 0; i < 5; i++) {
-            System.out.print("\n" + i);
+            outFile.print("\n" + i);
             for (int j = 0; j <= 4; j++) {
-                System.out.print("|");
+                outFile.print("|");
                 Location location = locations[i][j];
                 if (location.isVisited()) {
-                    System.out.print(location.getScene().getDisplaySymbol());
+                    outFile.print(location.getScene().getDisplaySymbol());
                 } else {
-                    System.out.print(" ?? ");
+                    outFile.print(" ?? ");
                 }
-                System.out.print("|");
+                outFile.print("|");
             }
-            System.out.print("\n ------------------------------");            
+            outFile.print("\n ------------------------------");            
         }
     }
     

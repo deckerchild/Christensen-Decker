@@ -36,7 +36,7 @@ public class MakeWeapon extends View {
         
         switch(choice){
             default:
-                System.out.println("\n*** Invalid Selection *** Try Again");
+                this.console.println("\n*** Invalid Selection *** Try Again");
                 break;
                 
         }

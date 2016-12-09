@@ -66,18 +66,18 @@ public class MovementControl {
         
     }
     
-    public boolean moveWest(Game game) {
+    public void moveWest(Game game) throws MovementControlException{
         
         Player player = game.getPlayer();
         Location currentLocation = player.getLocation();
         Map map = game.getMap();
         
         if(currentLocation.getColumn() == 0) {
-            return false;
+            throw new MovementControlException("Error: You cannot move to a location outside of the map");
         }
         
         player.setLocation(map.getLocation(currentLocation.getRow() + 1, currentLocation.getColumn()));
         
-        return true;
     }
+    
 }

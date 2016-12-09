@@ -43,7 +43,7 @@ public class MainMenuView extends View{
                 this.dispalyHelpMenu();
                 break;
             default:
-                System.out.println("\n*** Invalid Selection *** Try Again");
+                this.console.println("\n*** Invalid Selection *** Try Again");
                 break;
                 
         }

@@ -43,7 +43,7 @@ public class PlayerOption extends View{
                 this.flee();
                 break;
             default:
-                System.out.println("\n*** Invalid Selection *** Try Again");
+                this.console.println("\n*** Invalid Selection *** Try Again");
                 break;
                 
         }
@@ -57,13 +57,13 @@ public class PlayerOption extends View{
         double hard = 0;
         String number = "";
         
-        System.out.println("\nYou are attacking the monster your weapon has a mass "
+        this.console.println("\nYou are attacking the monster your weapon has a mass "
                 + "of "+ mass +" you need to choose how fast you swing it and how hard it is swung.");
       
             boolean valid = false; // intialized to not valid
         
         while (!valid){ // loop while an invalide value is entered
-            System.out.println("\nPlease enter how long it takes for your weapon to hit the monster in seconds.");
+            this.console.println("\nPlease enter how long it takes for your weapon to hit the monster in seconds.");
             
             try {
                 value = keyboard.readLine(); // get next line typed on the keyboard
@@ -73,7 +73,7 @@ public class PlayerOption extends View{
             value = value.trim(); // trim off leading and trailing blanks
             speed = Double.parseDouble(value);
             
-            System.out.println("\nPlease enter how fast you will swing the weapon in meters per sec");
+            this.console.println("\nPlease enter how fast you will swing the weapon in meters per sec");
              
             try {
                 number = keyboard.readLine(); // get next line typed on the keyboard
@@ -84,7 +84,7 @@ public class PlayerOption extends View{
             hard = Double.parseDouble(number);
             
             if(value.length() < 1 || number.length() < 1){ // value is blank
-                System.out.println("\nInvalid value: value can not be blank");
+                this.console.println("\nInvalid value: value can not be blank");
                 continue;
             };
             
@@ -96,15 +96,15 @@ public class PlayerOption extends View{
         double ansewer = weaponA.monsterEquation(mass, speed, hard);
  
         if(ansewer > 60){
-           System.out.println("Their is no humanly way to do this unless you are Captian America"
+            ErrorView.display(this.getClass().getName(), "Their is no humanly way to do this unless you are Captian America"
                    + "\nPlease try again");
         }
         else if(ansewer < 5){
-                System.out.println("You are not that wimpy put some back into it lad"
+                ErrorView.display(this.getClass().getName(),"You are not that wimpy put some back into it lad"
                         + "\nPlease try again");
                 }
         else{
-        System.out.println(ansewer);
+        this.console.println(ansewer);
           }
         
         }
@@ -112,7 +112,7 @@ public class PlayerOption extends View{
     private void flee() {
         EventControl eventA = new EventControl();
         int ansewer = eventA.runCalculation(0, 10, 20);
-        System.out.println(ansewer);
+        this.console.println(ansewer);
     }
     
 }

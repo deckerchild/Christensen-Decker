@@ -46,7 +46,7 @@ public class HelpMenuView extends View {
                 this.printManufacture();
                 break;
             default:
-                System.out.println("\n*** Invalid Selection *** Try Again");
+                this.console.println("\n*** Invalid Selection *** Try Again");
                 break;
                 
         }
@@ -54,7 +54,7 @@ public class HelpMenuView extends View {
     }
 
     private void printGoalGame() {
-        System.out.println("The three main characters are Mike, Dustin, and "
+        this.console.println("The three main characters are Mike, Dustin, and "
                          + "\nLucas are out on an Adventure because they lost "
                          + "\nEleven. They are out in the woods with the "
                          + "\nmonster,other creatures, and other obstacles such"
@@ -68,7 +68,7 @@ public class HelpMenuView extends View {
     }
 
     private void printStory() {
-        System.out.println("Stranger things is an American science "
+        this.console.println("Stranger things is an American science "
                          + "\nfiction-horror web television series created by"
                          + "\nthe Duffer Brothers. The plot follows the "
                          + "\ndisappearance of a young boy, and a telekinetic "
@@ -79,7 +79,7 @@ public class HelpMenuView extends View {
     }
 
     private void printMoveHelp() {
-        System.out.println("Characters will all be moving together one space "
+        this.console.println("Characters will all be moving together one space "
                          + "\nat a time. You will us a grid pattern to move"
                          + "\nyou will be asked to move a direction of N for"
                          + "\nnorth, S for south E for east or W for west."
@@ -89,14 +89,14 @@ public class HelpMenuView extends View {
     }
 
     private void printMapInventory() {
-        System.out.println("The list of inventory on the map shows you what "
+        this.console.println("The list of inventory on the map shows you what "
                          + "\nitems you have on the map to make weapons but "
                          + "\ndoesn’t show you the location of these items "
                          + "\non the map.");
     }
 
     private void printManufacture() {
-        System.out.println("Throughout the game, objects for making "
+        this.console.println("Throughout the game, objects for making "
                          + "\nweapons will be at randomized places on the map. "
                          + "\nYou are to gather as many objects as possible "
                          + "\nwithout getting caught by the sheriff, government"

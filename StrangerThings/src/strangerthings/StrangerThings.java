@@ -4,7 +4,7 @@
  * and open the template in the editor.
  */
 package strangerthings;
-
+import citbyui.cit260.strangerthings.view.ErrorView;
 import byui.cit260.strangerthings.model.Game;
 import byui.cit260.strangerthings.model.Player;
 import citbyui.cit260.strangerthings.view.StartProgramView;

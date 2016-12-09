@@ -8,7 +8,6 @@ package citbyui.cit260.strangerthings.view;
 import byui.cit260.strangerthings.control.MapControl;
 import byui.cit260.strangerthings.model.Game;
 import byui.cit260.strangerthings.model.Inventory;
-import java.util.ArrayList;
 import strangerthings.StrangerThings;
 
 /**
@@ -67,7 +66,7 @@ public class GameMenuView extends View{
             case "L": // Look for items on the location 
                 this.lookForItem();
             default:
-                System.out.println("\n*** Invalid Selection *** Try Again");
+                this.console.println("\n*** Invalid Selection *** Try Again");
                 break;
                 
         }
@@ -88,7 +87,7 @@ public class GameMenuView extends View{
         Game game = StrangerThings.getCurrentGame();
         Inventory[] inventory = game.getInventoryList();
         
-        System.out.println("\n      LIST OF INVENTORY ITEMS");
+        this.console.println("\n      LIST OF INVENTORY ITEMS");
         line = new StringBuilder("                                           ");
         line.insert(0, "DESCRIPTION");
         line.insert(20, "REQUIRED");
@@ -109,7 +108,7 @@ public class GameMenuView extends View{
 
     private void mapView() {
         MapControl display = new MapControl();
-        display.displayMap();
+        display.displayMap(console);
     }
 
     private void saveGame() {
@@ -128,7 +127,7 @@ public class GameMenuView extends View{
     }
 
     private void lookForItem() {
-        System.out.println("*** lookForItem function called ***");
+        this.console.println("*** lookForItem function called ***");
     }  
 
     private void playerOption() {

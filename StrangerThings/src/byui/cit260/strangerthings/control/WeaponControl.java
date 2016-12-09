@@ -26,7 +26,7 @@ public class WeaponControl {
                       
         }
 //   public WeaponControl(){
-//         System.out.println("weapon test");
+//         this.console.println("weapon test");
  //   }
 }
     

@@ -51,7 +51,7 @@ public class InGameMoveMenu extends View{
                 this.viewMap();
                 break;
             default:
-                System.out.println("\n*** Invalid Selection *** Try Again");
+                this.console.println("\n*** Invalid Selection *** Try Again");
                 break;
                 
         }
@@ -66,7 +66,7 @@ private void moveNorth(){
             this.console.println(me.getMessage());
         }
         Location playerLocation = StrangerThings.getCurrentGame().getPlayer().getLocation();
-        System.out.println(
+        this.console.println(
                 "\n Your locations is " + playerLocation.getRow() + ", " + playerLocation.getColumn()
         );
     }
@@ -81,7 +81,7 @@ private void moveNorth(){
             this.console.println(me.getMessage());
         }
         Location playerLocation = StrangerThings.getCurrentGame().getPlayer().getLocation();
-        System.out.println(
+        this.console.println(
                 "\n Your locations is " + playerLocation.getRow() + ", " + playerLocation.getColumn()
         );
     }
@@ -95,20 +95,22 @@ private void moveNorth(){
             this.console.println(me.getMessage());
         }
         Location playerLocation = StrangerThings.getCurrentGame().getPlayer().getLocation();
-        System.out.println(
+        this.console.println(
                 "\n Your locations is " + playerLocation.getRow() + ", " + playerLocation.getColumn()
         );
     }
     
     private void moveWest(){
         MovementControl mc = new MovementControl();
-            if(mc.moveWest(StrangerThings.getCurrentGame()) == false){
-            System.out.println("You can't move West!");
-        }
+        try{
+            mc.moveWest(StrangerThings.getCurrentGame());
+            
+        }catch(MovementControlException me){
         Location playerLocation = StrangerThings.getCurrentGame().getPlayer().getLocation();
-        System.out.println(
+        this.console.println(
                 "\n Your locations is " + playerLocation.getRow() + ", " + playerLocation.getColumn()
         );
+    }
     }
     
     private void viewMap(){            
