@@ -22,7 +22,8 @@ public class GameMenuView extends View{
                   +"\n In Game Menu"
                   +"\n-------------------------------------------"
                   +"\n M - Move"
-                  +"\n I - Inventory List Report"
+                  +"\n I - View Inventory"
+                  +"\n R - Inventory Status Report"
                   +"\n C - Character Status Report"   
                   +"\n V - View Map"
                   +"\n S - Save Game"
@@ -44,6 +45,9 @@ public class GameMenuView extends View{
                 break;
             case "I": // Checks the inventory
                 this.gameInventory();
+                break;
+            case "R": // Checks the inventory
+                this.inventoryStatusReport(outputLocation);
                 break;
             case "C": // Checks the inventory
                 this.characterReport();
@@ -77,8 +81,14 @@ public class GameMenuView extends View{
         InGameMoveMenu moveInGame = new InGameMoveMenu();
         moveInGame.display();
     }
-    private void characterReport() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    private void characterReport(String outputLocation) {
+        System.out.print("Please enter report destination: ");
+        outputLocation = System.console().readLine();
+    }
+    
+    private void inventoryStatusReport(String outputLocation) {
+        System.out.print("Please enter report destination: ");
+        outputLocation = System.console().readLine();
     }
 
     private void gameInventory() {
@@ -105,6 +115,8 @@ public class GameMenuView extends View{
             this.console.println(line.toString());
         }
     }
+    
+    
 
     private void mapView() {
         MapControl display = new MapControl();
@@ -134,6 +146,8 @@ public class GameMenuView extends View{
         PlayerOption playerAction = new PlayerOption();
         playerAction.display();    
     }
+
+    
 
     
 }
