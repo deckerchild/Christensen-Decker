@@ -106,11 +106,12 @@ private void moveNorth(){
             mc.moveWest(StrangerThings.getCurrentGame());
             
         }catch(MovementControlException me){
+            this.console.println(me.getMessage());
+        }
         Location playerLocation = StrangerThings.getCurrentGame().getPlayer().getLocation();
         this.console.println(
                 "\n Your locations is " + playerLocation.getRow() + ", " + playerLocation.getColumn()
         );
-    }
     }
     
     private void viewMap(){            
