@@ -63,7 +63,7 @@ public class LoadMenuView extends View {
         try {
             String value = keyboard.readLine();
             value = value.trim();
-            GameControl.loadGame(value);
+            GameControl.saveGame(value);
             GameMenuView gmv = new GameMenuView();
             gmv.display();
         } catch (Exception e) {

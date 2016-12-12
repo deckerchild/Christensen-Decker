@@ -37,21 +37,7 @@ public class MovementControl {
         player.setLocation(newLocation);
         
     }
-    
-    public void moveEast(Game game) 
-                               throws MovementControlException{
-        
-        Player player = game.getPlayer();
-        Location currentLocation = player.getLocation();
-        Map map = game.getMap();
-        
-        if(currentLocation.getColumn() == Map.NUM_COLS - 1) {
-            throw new MovementControlException ("Error: You cannot move to a non existing row");
-        }  
-        player.setLocation(map.getLocation(currentLocation.getRow(), currentLocation.getColumn() + 1));
-    
-    }
-    
+
     public void moveSouth(Game game) throws MovementControlException{
         
         Player player = game.getPlayer();
@@ -66,17 +52,32 @@ public class MovementControl {
         
     }
     
+        
+    public void moveEast(Game game) 
+                               throws MovementControlException{
+        
+        Player player = game.getPlayer();
+        Location currentLocation = player.getLocation();
+        Map map = game.getMap();
+        
+        if(currentLocation.getColumn() == Map.NUM_COLS - 1) {
+            throw new MovementControlException ("Error: You cannot move to a non existing row");
+        }  
+        player.setLocation(map.getLocation(currentLocation.getRow(), currentLocation.getColumn() + 1));
+    
+    }
+    
     public void moveWest(Game game) throws MovementControlException{
         
         Player player = game.getPlayer();
         Location currentLocation = player.getLocation();
         Map map = game.getMap();
         
-        if(currentLocation.getColumn() == 0) {
+        if(currentLocation.getColumn() == Map.NUM_COLS + 1) {
             throw new MovementControlException("Error: You cannot move to a location outside of the map");
         }
         
-        player.setLocation(map.getLocation(currentLocation.getRow() + 1, currentLocation.getColumn()));
+        player.setLocation(map.getLocation(currentLocation.getRow(), currentLocation.getColumn() - 1));
         
     }
     

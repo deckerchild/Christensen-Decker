@@ -17,12 +17,14 @@ import byui.cit260.strangerthings.model.Weapon;
 import byui.cit260.strangerthings.model.Character;
 import java.awt.Point;
 import java.io.FileInputStream;
+import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
 import java.io.PrintWriter;
-import static java.lang.System.out;
+import static java.sql.DriverManager.println;
+import java.util.Scanner;
 import strangerthings.StrangerThings;
 
 /**
@@ -164,6 +166,10 @@ public class GameControl {
             ObjectOutputStream oos = new ObjectOutputStream(fos);
             
             oos.writeObject(StrangerThings.getGame());
+            
+        } catch(FileNotFoundException fne ){
+            ErrorView.display("ProgramControl", "Invalid File Name " + filePath);
+        
         } catch(Exception e) {
             ErrorView.display("ProgramControl", e.getMessage());
             

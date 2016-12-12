@@ -5,6 +5,7 @@
  */
 package byui.cit260.strangerthings.model;
 
+import java.io.PrintWriter;
 import java.io.Serializable;
 import java.util.Objects;
 
