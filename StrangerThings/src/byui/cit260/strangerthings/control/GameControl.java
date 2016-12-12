@@ -82,16 +82,15 @@ public class GameControl {
       
       Character[] characterList = Character.values();
       
-          out.println("\n\n                Character Report               ");
+          out.printf("\n\n                Character Report               ");
           out.printf("%n%-20s%10s%10s", "Description", "HealthMax", "HealthMin");
           out.printf("%n%-20s%10s%10s", "----------", "--------", "------");
       
-      for (int i = 0; i < characterList.length; i++) {
-          Character character = characterList[i];
-          out.printf("%n%-20s%7d%13.2f", character.getDescription()
-                                       , game.getHealth()
-                                       , game.getMinHealth());
-      }
+          for (Character character : characterList) {
+              out.printf("%n%-20s%7d%13.2f", character.getDescription()
+                      , game.getHealth()
+                      , game.getMinHealth());
+          }
       
       }catch (IOException ex){
           System.out.println("I/O Error: " + ex.getMessage());
