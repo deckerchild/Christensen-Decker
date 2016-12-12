@@ -5,6 +5,7 @@
  */
 package citbyui.cit260.strangerthings.view;
 
+import byui.cit260.strangerThings.control.GameControl;
 import byui.cit260.strangerthings.control.MapControl;
 import byui.cit260.strangerthings.model.Game;
 import byui.cit260.strangerthings.model.Inventory;
@@ -46,11 +47,14 @@ public class GameMenuView extends View{
             case "I": // Checks the inventory
                 this.gameInventory();
                 break;
-            case "R": // Checks the inventory
-                this.inventoryStatusReport(outputLocation);
+            case "R": {
+            String outputLocation = null;
+            this.inventoryStatusReport(outputLocation);
+        }
                 break;
             case "C": // Checks the inventory
-                this.characterReport();
+                String outputLocation = null;
+                this.characterReport(outputLocation);
                 break;
             case "V": // Shows the map
                 this.mapView();
@@ -84,11 +88,17 @@ public class GameMenuView extends View{
     private void characterReport(String outputLocation) {
         System.out.print("Please enter report destination: ");
         outputLocation = System.console().readLine();
+        
+        GameControl gameControl = new GameControl();
+        gameControl.createCharacterList(outputLocation);
     }
     
     private void inventoryStatusReport(String outputLocation) {
         System.out.print("Please enter report destination: ");
         outputLocation = System.console().readLine();
+        
+        GameControl gameControl = new GameControl();
+        gameControl.createInventoryReport(outputLocation);
     }
 
     private void gameInventory() {

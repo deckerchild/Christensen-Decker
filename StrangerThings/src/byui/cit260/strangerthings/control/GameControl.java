@@ -96,7 +96,7 @@ public class GameControl {
       }
   }
   
-  private void createInventoryReport(String outputLocation){
+  public void createInventoryReport(String outputLocation){
       
       try(PrintWriter out = new PrintWriter(outputLocation)){
       Inventory[] inventoryList = new Inventory[6];
