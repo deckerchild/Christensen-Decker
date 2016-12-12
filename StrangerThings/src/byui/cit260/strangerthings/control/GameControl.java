@@ -97,7 +97,7 @@ public class GameControl {
       }
   }
   
-  private void createInventoryReport(String outputLocation){
+  public void createInventoryReport(String outputLocation){
       
       try(PrintWriter out = new PrintWriter(outputLocation)){
       Inventory[] inventoryList = new Inventory[6];
@@ -106,12 +106,10 @@ public class GameControl {
           out.printf("%n%-20s%10s%10s", "Description", "Quantity", "Actual Quantity");
           out.printf("%n%-20s%10s%10s", "----------", "--------", "----------");
            
-          for(int i = 0; i < 7; i++)
-          {
-              Inventory inventory = inventoryList[i];
+          for (Inventory inventory : inventoryList) {
               out.printf("%n%-20s%7d%13.2f", inventory.getDescription()
-                                       , inventory.getRequiredAmount()
-                                       , inventory.getQuantityInStock());
+                      , inventory.getRequiredAmount()
+                      , inventory.getQuantityInStock());
           }
           
       }catch(IOException ex){
