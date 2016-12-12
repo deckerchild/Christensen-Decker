@@ -84,12 +84,11 @@ public class GameControl {
           out.printf("%n%-20s%10s%10s", "Description", "HealthMax", "HealthMin");
           out.printf("%n%-20s%10s%10s", "----------", "--------", "------");
       
-      for (int i = 0; i < characterList.length; i++) {
-          Character character = characterList[i];
-          out.printf("%n%-20s%7d%13.2f", character.getDescription()
-                                       , game.getHealth()
-                                       , game.getMinHealth());
-      }
+          for (Character character : characterList) {
+              out.printf("%n%-20s%7d%13.2f", character.getDescription()
+                      , game.getHealth()
+                      , game.getMinHealth());
+          }
       
       }catch (IOException ex){
           System.out.println("I/O Error: " + ex.getMessage());
@@ -105,12 +104,10 @@ public class GameControl {
           out.printf("%n%-20s%10s%10s", "Description", "Quantity", "Actual Quantity");
           out.printf("%n%-20s%10s%10s", "----------", "--------", "----------");
            
-          for(int i = 0; i < 7; i++)
-          {
-              Inventory inventory = inventoryList[i];
+          for (Inventory inventory : inventoryList) {
               out.printf("%n%-20s%7d%13.2f", inventory.getDescription()
-                                       , inventory.getRequiredAmount()
-                                       , inventory.getQuantityInStock());
+                      , inventory.getRequiredAmount()
+                      , inventory.getQuantityInStock());
           }
           
       }catch(IOException ex){

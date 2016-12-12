@@ -9,38 +9,41 @@ import byui.cit260.strangerThings.control.GameControl;
 import byui.cit260.strangerthings.control.MapControl;
 import byui.cit260.strangerthings.model.Game;
 import byui.cit260.strangerthings.model.Inventory;
+import java.io.IOException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import strangerthings.StrangerThings;
 
 /**
  *
  * @author tcfat
  */
-public class GameMenuView extends View{
-    
+public class GameMenuView extends View {
+
     public GameMenuView() {
-             super("\n"
-                  + "\n------------------------------------------"
-                  +"\n In Game Menu"
-                  +"\n-------------------------------------------"
-                  +"\n M - Move"
-                  +"\n I - View Inventory"
-                  +"\n R - Inventory Status Report"
-                  +"\n C - Character Status Report"   
-                  +"\n V - View Map"
-                  +"\n S - Save Game"
-                  +"\n H - Help"
-                  +"\n P - Player options"
-                  +"\n Q - Quit"
-                  +"\n W - Manufacture Weapon/Weapon Status"
-                  +"\n L - Look for items"
-                  +"\n-------------------------------------------"); 
+        super("\n"
+                + "\n------------------------------------------"
+                + "\n In Game Menu"
+                + "\n-------------------------------------------"
+                + "\n M - Move"
+                + "\n I - View Inventory"
+                + "\n R - Inventory Status Report"
+                + "\n C - Character Status Report"
+                + "\n V - View Map"
+                + "\n S - Save Game"
+                + "\n H - Help"
+                + "\n P - Player options"
+                + "\n Q - Quit"
+                + "\n W - Manufacture Weapon/Weapon Status"
+                + "\n L - Look for items"
+                + "\n-------------------------------------------");
     }
 
     @Override
     public boolean doAction(String choice) {
         choice = choice.toUpperCase();
-        
-        switch(choice){
+
+        switch (choice) {
             case "M": // Move the game along
                 this.moveInGame();
                 break;
@@ -48,13 +51,23 @@ public class GameMenuView extends View{
                 this.gameInventory();
                 break;
             case "R": {
-            String outputLocation = null;
-            this.inventoryStatusReport(outputLocation);
-        }
-                break;
+                String outputLocation = null;
+                try {
+                    this.inventoryStatusReport(outputLocation);
+                } catch (IOException ex) {
+                    Logger.getLogger(GameMenuView.class.getName()).log(Level.SEVERE, null, ex);
+                }
+            }
+            break;
             case "C": // Checks the inventory
                 String outputLocation = null;
-                this.characterReport(outputLocation);
+                 {
+                    try {
+                        this.characterReport(outputLocation);
+                    } catch (IOException ex) {
+                        Logger.getLogger(GameMenuView.class.getName()).log(Level.SEVERE, null, ex);
+                    }
+                }
                 break;
             case "V": // Shows the map
                 this.mapView();
@@ -76,7 +89,7 @@ public class GameMenuView extends View{
             default:
                 this.console.println("\n*** Invalid Selection *** Try Again");
                 break;
-                
+
         }
         return false;
     }
@@ -85,48 +98,47 @@ public class GameMenuView extends View{
         InGameMoveMenu moveInGame = new InGameMoveMenu();
         moveInGame.display();
     }
-    private void characterReport(String outputLocation) {
+
+    private void characterReport(String outputLocation) throws IOException {
         System.out.print("Please enter report destination: ");
-        outputLocation = System.console().readLine();
-        
+        outputLocation = keyboard.readLine();
+
         GameControl gameControl = new GameControl();
         gameControl.createCharacterList(outputLocation);
     }
-    
-    private void inventoryStatusReport(String outputLocation) {
+
+    private void inventoryStatusReport(String outputLocation) throws IOException {
         System.out.print("Please enter report destination: ");
-        outputLocation = System.console().readLine();
-        
+        outputLocation = keyboard.readLine();
+
         GameControl gameControl = new GameControl();
         gameControl.createInventoryReport(outputLocation);
     }
 
     private void gameInventory() {
         StringBuilder line;
-        
+
         Game game = StrangerThings.getCurrentGame();
         Inventory[] inventory = game.getInventoryList();
-        
+
         this.console.println("\n      LIST OF INVENTORY ITEMS");
         line = new StringBuilder("                                           ");
         line.insert(0, "DESCRIPTION");
         line.insert(20, "REQUIRED");
         line.insert(30, "IN STOCK");
         this.console.println(line.toString());
-        
+
         // for each inventory item
         for (Inventory item : inventory) {
             line = new StringBuilder("                                       ");
             line.insert(0, item.getDescription());
             line.insert(23, item.getRequiredAmount());
             line.insert(33, item.getQuantityInStock());
-        
+
             // Display the line
             this.console.println(line.toString());
         }
     }
-    
-    
 
     private void mapView() {
         MapControl display = new MapControl();
@@ -139,8 +151,8 @@ public class GameMenuView extends View{
     }
 
     private void helpMenu() {
-     HelpMenuView helpMenu = new HelpMenuView();
-        helpMenu.display();   
+        HelpMenuView helpMenu = new HelpMenuView();
+        helpMenu.display();
     }
 
     private void makeWeapon() {
@@ -150,14 +162,11 @@ public class GameMenuView extends View{
 
     private void lookForItem() {
         this.console.println("*** lookForItem function called ***");
-    }  
+    }
 
     private void playerOption() {
         PlayerOption playerAction = new PlayerOption();
-        playerAction.display();    
+        playerAction.display();
     }
 
-    
-
-    
 }
