@@ -6,6 +6,7 @@
 package byui.cit260.strangerThings.control;
 
 import byui.cit260.strangerthings.control.MapControl;
+import byui.cit260.strangerthings.exceptions.GameControlException;
 import citbyui.cit260.strangerthings.view.ErrorView;
 import byui.cit260.strangerthings.model.Game;
 import byui.cit260.strangerthings.model.Inventory;
@@ -23,8 +24,6 @@ import java.io.IOException;
 import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
 import java.io.PrintWriter;
-import static java.sql.DriverManager.println;
-import java.util.Scanner;
 import strangerthings.StrangerThings;
 
 /**
@@ -73,8 +72,8 @@ public class GameControl {
         return player;
    }
   
-  public void createCharacterList(String outputLocation){
-      
+  public static void createCharacterList(String outputLocation) throws GameControlException{
+ 
       Game game = new Game();
       
       try(PrintWriter out = new PrintWriter(outputLocation)){
@@ -82,7 +81,7 @@ public class GameControl {
       
       Character[] characterList = Character.values();
       
-          out.printf("\n\n                Character Report               ");
+          out.println("\n\n                Character Report               ");
           out.printf("%n%-20s%10s%10s", "Description", "HealthMax", "HealthMin");
           out.printf("%n%-20s%10s%10s", "----------", "--------", "------");
       
@@ -91,10 +90,12 @@ public class GameControl {
                       , game.getHealth()
                       , game.getMinHealth());
           }
-      
-      }catch (IOException ex){
-          System.out.println("I/O Error: " + ex.getMessage());
-      }
+      }catch(FileNotFoundException ex){
+         throw new GameControlException("Could not find the file!"); 
+         
+      }//catch (IOException ex){
+         // throw new GameControlException("Could not write to file!");
+      //}
   }
   
   public void createInventoryReport(String outputLocation){
@@ -107,7 +108,7 @@ public class GameControl {
           out.printf("%n%-20s%10s%10s", "----------", "--------", "----------");
            
           for (Inventory inventory : inventoryList) {
-              out.printf("%n%-20s%7d%13.2f", inventory.getDescription()
+              out.printf("%n%-20s%7d%13f", inventory.getDescription()
                       , inventory.getRequiredAmount()
                       , inventory.getQuantityInStock());
           }

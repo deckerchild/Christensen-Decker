@@ -7,6 +7,7 @@ package citbyui.cit260.strangerthings.view;
 
 import byui.cit260.strangerThings.control.GameControl;
 import byui.cit260.strangerthings.control.MapControl;
+import byui.cit260.strangerthings.exceptions.GameControlException;
 import byui.cit260.strangerthings.model.Game;
 import byui.cit260.strangerthings.model.Inventory;
 import java.io.IOException;
@@ -51,7 +52,7 @@ public class GameMenuView extends View {
                 this.gameInventory();
                 break;
             case "R": {
-                String outputLocation = null;
+                String outputLocation = "";
                 try {
                     this.inventoryStatusReport(outputLocation);
                 } catch (IOException ex) {
@@ -60,15 +61,8 @@ public class GameMenuView extends View {
             }
             break;
             case "C": // Checks the inventory
-                String outputLocation = null;
-                 {
-                    try {
-                        this.characterReport(outputLocation);
-                    } catch (IOException ex) {
-                        Logger.getLogger(GameMenuView.class.getName()).log(Level.SEVERE, null, ex);
-                    }
-                }
-                break;
+                        this.characterReport();
+                        break;
             case "V": // Shows the map
                 this.mapView();
                 break;
@@ -99,16 +93,21 @@ public class GameMenuView extends View {
         moveInGame.display();
     }
 
-    private void characterReport(String outputLocation) throws IOException {
-        System.out.print("Please enter report destination: ");
-        outputLocation = keyboard.readLine();
+    private void characterReport() throws GameControlException{
+        String outputLocation = "";
+        this.console.print("Please enter report destination: ");
+        try {
+            outputLocation = keyboard.readLine();
+        } catch (IOException ex) {
+            this.console.println(ex.getMessage());
+        }
 
         GameControl gameControl = new GameControl();
         gameControl.createCharacterList(outputLocation);
     }
 
     private void inventoryStatusReport(String outputLocation) throws IOException {
-        System.out.print("Please enter report destination: ");
+        this.console.print("Please enter report destination: ");
         outputLocation = keyboard.readLine();
 
         GameControl gameControl = new GameControl();
