@@ -60,8 +60,14 @@ public class GameMenuView extends View {
                 }
             }
             break;
-            case "C": // Checks the inventory
-                        this.characterReport();
+            case "C": {
+            try {
+                // Checks the inventory
+                this.characterReport();
+            } catch (GameControlException ex) {
+                Logger.getLogger(GameMenuView.class.getName()).log(Level.SEVERE, null, ex);
+            }
+        }
                         break;
             case "V": // Shows the map
                 this.mapView();
