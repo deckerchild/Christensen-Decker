@@ -23,8 +23,6 @@ import java.io.IOException;
 import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
 import java.io.PrintWriter;
-import static java.sql.DriverManager.println;
-import java.util.Scanner;
 import strangerthings.StrangerThings;
 
 /**
