@@ -28,6 +28,7 @@ public class CharacterReportView extends View {
             Logger.getLogger(CharacterReportView.class.getName()).log(Level.SEVERE, null, ex);
         }
         return false;
+        
     }
     
 }
