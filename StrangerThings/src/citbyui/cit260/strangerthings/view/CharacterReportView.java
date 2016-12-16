@@ -7,6 +7,7 @@ package citbyui.cit260.strangerthings.view;
 
 import byui.cit260.strangerThings.control.GameControl;
 import byui.cit260.strangerthings.exceptions.GameControlException;
+import java.io.FileNotFoundException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
@@ -24,10 +25,11 @@ public class CharacterReportView extends View {
         try {
             GameControl.createCharacterList(filePath);
             return true;
-        } catch (GameControlException ex) {
+        } catch (GameControlException | FileNotFoundException ex) {
             Logger.getLogger(CharacterReportView.class.getName()).log(Level.SEVERE, null, ex);
         }
         return false;
+        
     }
     
 }

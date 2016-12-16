@@ -10,6 +10,7 @@ import byui.cit260.strangerthings.control.MapControl;
 import byui.cit260.strangerthings.exceptions.GameControlException;
 import byui.cit260.strangerthings.model.Game;
 import byui.cit260.strangerthings.model.Inventory;
+import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -65,6 +66,8 @@ public class GameMenuView extends View {
                 // Checks the inventory
                 this.characterReport();
             } catch (GameControlException ex) {
+                ErrorView.display(this.getClass().getName(), "Wrong choice");
+            } catch (FileNotFoundException ex) {
                 Logger.getLogger(GameMenuView.class.getName()).log(Level.SEVERE, null, ex);
             }
         }
@@ -99,7 +102,7 @@ public class GameMenuView extends View {
         moveInGame.display();
     }
 
-    private void characterReport() throws GameControlException{
+    private void characterReport() throws GameControlException, FileNotFoundException{
         String outputLocation = "";
         this.console.print("Please enter report destination: ");
         try {
