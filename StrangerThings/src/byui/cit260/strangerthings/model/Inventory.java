@@ -32,8 +32,8 @@ public class Inventory implements Serializable{
         
         int[] inventoryList;
 
-        //allocates memory for 10 integers
-        inventoryList = new int[10];
+        //allocates memory for 11 integers
+        inventoryList = new int[6];
         
         // initialize first element
         inventoryList[0] = nails;
