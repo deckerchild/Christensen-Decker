@@ -108,9 +108,10 @@ public class GameControl {
             out.println("\n\n                Inventory Report               ");
             out.printf("%n%-20s%10s%10s", "Description", "Quantity", "Actual Quantity");
             out.printf("%n%-20s%10s%10s", "----------", "--------", "----------");
-
-            for (Inventory inventory : inventoryList) {
+            //for(int i = 0; i < inventory.length(); i++    
+            for (int i = 0; inventoryList.length >= i; i++) {
                 {
+                    Inventory inventory = inventoryList[i];
                     out.printf("%n%-20s%7d%13f", inventory.getDescription(), inventory.getRequiredAmount(), inventory.getQuantityInStock());
                 }
             }
